@@ -79,16 +79,15 @@ Part 1a - Step 2: Assignment
     Fill in the remaining blanks below which describe this car interior in terms of sub-objects.
 
 Main Object: Car Interior
-    Sub Object: Steering Wheel
         Name 4 nouns you'll find on the [Sub Object]
-            1) paddle shifters
-            2) 'cruise control' controls
-            3) ''
-            4) 
+            1) Paddle shifters
+            2) Cruise control controls
+            3) Audio controls
+            4) Voice command controls
         Name 2 actions that the [Sub Object] can do:
-            1) adjust cruise control settings.
-            2) 
-        
+            1) Adjust cruise control settings
+            2) Control audio and navigation functions using steering wheel buttons.
+            
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
             1) Speedometer
