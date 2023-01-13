@@ -199,53 +199,54 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+Thing 1) Cellphone
+5 properties: 
+    1) Number of camera lens (int)
+    2) Manufacturer (std::string)
+    3) Ram (int)
+    4) Screen size (float)
+    5) Amount of storage (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Make phone calls
+    2) Take photos and videos
+    3) Access the internet and apps.
 
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+Thing 2) Movie Theater
+5 properties: 
+    1) Number of theaters (int)
+    2) Cost of small popcorn (double)
+    3) Cost of one ticket (double)
+    4) Number of IMAX theaters (int)
+    5) Number of movies available (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Sell movie tickets
+    2) Play movies
+    3) Sell food and snacks
 
-Thing 4)
+Thing 3) Dog
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of legs (int)
+    2) Name (std::string)
+    3) Age (int)
+    4) Number of eyes (int)
+    5) Breed (std::string)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Bark
+    2) Wag tail
+    3) Perform a trick
+
+Thing 4) Guitar
+5 properties:
+    1) Number of strings (int)
+    2) Number of frets (int)
+    3) Volume level (float)
+    4) Brand (std::string)
+    5) Material (std::string)
+3 things it can do:
+    1) Play individual notes
+    2) Be tuned to different tunings
+    3) Strum notes
 */
 
 /*
