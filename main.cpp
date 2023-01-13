@@ -83,51 +83,55 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
+            3) ''
             4) 
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) 
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) Speedometer
+            2) Fuel gauge
+            3) Odometer
+            4) Tachometer
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) Display vehicle speed
+            2) Indicate amount of remaining fuel
+            3) Display total distance traveled by vehicle.
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) Temperature control
+            2) Air conditioning/heating unit
+            3) Ventilation system
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) Adjust the temperature
+            2) Control the airflow
+            3) Change the ventilation settings
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) Touchscreen display
+            2) Speakers
+            3) Audio/video input
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) Play music/videos
+            2) Connect to Bluetooth devices
+            3) Navigate through menus  
+        Name 3 actions that the [Sub Object] can do:
+            1) Access internet and social media
+            2) Use voice commands to control system
+            3) Display navigation and traffic information.
 
-    Sub Object: Seat 
+   Sub Object: Seat
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) Upholstery
+            2) Reclining mechanism
+            3) Headrest
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) Adjust the reclining angle
+            2) Adjust the headrest position. 
 */
 
 /*
