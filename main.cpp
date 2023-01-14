@@ -440,8 +440,8 @@ example:
 
 Thing 5) Wings
 5 properties:
-    1) Wing shape (float)
-    2) Wing length (float)
+    1) Wing shape (std::string)
+    2) Wing length (int)
     3) Ratio of wings length to width (int)
     4) Angle of wing tilt (float)
     5) Flap angle (float)
@@ -464,8 +464,8 @@ Thing 6) Engines
 
 Thing 7) Cargo space
 5 properties:
-    1) Volume (double)
-    2) Weight (double)
+    1) Volume (float)
+    2) Weight (int)
     3) Temperature (int)
     4) Capacity (int)
     5) Loading time (float)
@@ -476,11 +476,11 @@ Thing 7) Cargo space
 
 Thing 8) Tail
 5 properties:
-    1) Tail length (float)
-    2) Tail width (float)
+    1) Tail length (int)
+    2) Tail width (int)
     3) Elevator angle (float)
     4) Stabilizer angle (float)
-    5) Yaw control width (float)
+    5) Yaw control width (int)
 3 things it can do:
     1) Create stability
     2) Create lift
@@ -488,8 +488,8 @@ Thing 8) Tail
 
 Thing 9) Fuselage
 5 properties:
-    1) Length of fuselage (float)
-    2) Width of fuselage (float)
+    1) Length of fuselage (int)
+    2) Width of fuselage (int)
     3) Height of fuselage (float)
     4) Capacity of fuselage (int)
     5) Drag from fuselage (float)
