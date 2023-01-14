@@ -345,9 +345,9 @@ Thing 10) Airplane
 5 properties: 
     1) Wings
     2) Engines
-    3) Navigation System
-    4) Communication System
-    5) Pilots
+    3) Cargo space
+    4) Tail
+    5) Fuselage
 3 things it can do:
     1) Fly
     2) Transport passengers and cargo
@@ -438,65 +438,65 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
+Thing 5) Wings
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Wing shape (float)
+    2) Wing length (float)
+    3) Ratio of wings length to width (int)
+    4) Angle of wing tilt (float)
+    5) Flap angle (float)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Generate lift
+    2) Provide stability
+    3) Adjust to various conditions and scenarios
 
-Thing 6)
+Thing 6) Engines
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of engines (int)
+    2) Power output (float)
+    3) Fuel efficiency (float)
+    4) Emissions (float)
+    5) Size (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Provide thrust
+    2) Generate elecricity
+    3) Control speed and altitude
 
-Thing 7)
+Thing 7) Cargo space
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Volume (double)
+    2) Weight (double)
+    3) Temperature (int)
+    4) Capacity (int)
+    5) Loading time (float)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Transport
+    2) Store
+    3) Secure
 
-Thing 8)
+Thing 8) Tail
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Tail length (float)
+    2) Tail width (float)
+    3) Elevator angle (float)
+    4) Stabilizer angle (float)
+    5) Yaw control width (float)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Create stability
+    2) Create lift
+    3) Control side to side movement
 
-Thing 9)
+Thing 9) Fuselage
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Length of fuselage (float)
+    2) Width of fuselage (float)
+    3) Height of fuselage (float)
+    4) Capacity of fuselage (int)
+    5) Drag from fuselage (float)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Enclose passenger cabin and cargo
+    2) Support wings and tail
+    3) Maintain internal pressure
  */
 
 /*
