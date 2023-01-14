@@ -846,6 +846,169 @@ struct CarWash
     //    - detail the car interior
 };
 
+struct cellphone
+{
+    /*
+    5 properties: 
+        1) Number of camera lens (int)
+        2) Manufacturer (std::string)
+        3) Ram (int)
+        4) Screen size (float)
+        5) Amount of storage (int)
+    
+    3 things it can do:
+        1) Make phone calls
+        2) Take photos and videos
+        3) Access the internet and apps.
+    */
+};
+
+struct MovieTheater
+{
+    /*
+    5 properties: 
+        1) Number of theaters (int)
+        2) Cost of small popcorn (double)
+        3) Cost of one ticket (double)
+        4) Number of IMAX theaters (int)
+        5) Number of movies available (int)
+    3 things it can do:
+        1) Sell movie tickets
+        2) Play movies
+        3) Sell food and snacks
+    */    
+};
+
+struct dog 
+{
+    /*
+    5 properties:
+        1) Number of legs (int)
+        2) Name (std::string)
+        3) Age (int)
+        4) Number of eyes (int)
+        5) Breed (std::string)
+    3 things it can do:
+        1) Bark
+        2) Wag tail
+        3) Perform a trick
+    */
+};
+
+struct guitar
+{
+    /*
+    5 properties:
+        1) Number of strings (int)
+        2) Number of frets (int)
+        3) Volume level (float)
+        4) Brand (std::string)
+        5) Material (std::string)
+    3 things it can do:
+        1) Play individual notes
+        2) Be tuned to different tunings
+        3) Strum notes
+*/
+};
+
+struct wings
+{
+    /*
+    5 properties:
+        1) Wing shape (std::string)
+        2) Wing length (int)
+        3) Ratio of wings length to width (int)
+        4) Angle of wing tilt (float)
+        5) Flap angle (float)
+    3 things it can do:
+        1) Generate lift
+        2) Provide stability
+        3) Adjust to various conditions and scenarios
+    */
+}; 
+
+struct engines 
+{
+    /*
+    5 properties:
+        1) Number of engines (int)
+        2) Power output (float)
+        3) Fuel efficiency (float)
+        4) Emissions (float)
+        5) Size (int)
+    3 things it can do:
+        1) Provide thrust
+        2) Generate elecricity
+        3) Control speed and altitude
+*/
+};
+
+struct CargoSpace
+{
+    /*
+    5 properties:
+        1) Volume (float)
+        2) Weight (int)
+        3) Temperature (int)
+        4) Capacity (int)
+        5) Loading time (float)
+    3 things it can do:
+        1) Transport
+        2) Store
+        3) Secure
+    */
+
+};
+
+struct tail
+{
+    /*
+    5 properties:
+        1) Tail length (int)
+        2) Tail width (int)
+        3) Elevator angle (float)
+        4) Stabilizer angle (float)
+        5) Yaw control width (int)
+    3 things it can do:
+        1) Create stability
+        2) Create lift
+        3) Control side to side movement
+    */
+};
+
+struct fuselage
+{
+    /*
+    5 properties:
+        1) Length of fuselage (int)
+        2) Width of fuselage (int)
+        3) Height of fuselage (float)
+        4) Capacity of fuselage (int)
+        5) Drag from fuselage (float)
+    3 things it can do:
+        1) Enclose passenger cabin and cargo
+        2) Support wings and tail
+        3) Maintain internal pressure
+    */
+
+};
+
+struct airplane
+{
+    /*
+    5 properties: 
+        1) Wings
+        2) Engines
+        3) Cargo space
+        4) Tail
+        5) Fuselage
+    3 things it can do:
+        1) Fly
+        2) Transport passengers and cargo
+        3) Communicate with air traffic control
+    */
+};
+
 /*
 =================
 Part 1e - Step 4: Commit
