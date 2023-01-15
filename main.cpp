@@ -1286,6 +1286,231 @@ struct CarWash
     void detailInterior();
 };
 
+struct Cellphone
+{
+// 5 properties: 
+    // 1) Number of camera lens (int)
+    int numCameraLens = 2;
+    //     2) Manufacturer (std::string)
+    std::string manufacaturer = "Apple";
+    //     3) Ram (int)
+    int ram = 16;
+    //     4) Screen size (float)
+    float screenSize = 6.2f;
+    //     5) Amount of storage (int)
+    int storageAmount = 32;
+    
+    // 3 things it can do:
+    //     1) Make phone calls
+    void callNumber (std::string phoneNumber);
+    //     2) Take photos and videos
+    void takePhoto (); 
+    //     3) Conenct to the internet
+    void connectOnline (std::string wifiConnection);
+};
+
+struct MovieTheater
+{
+    // 5 properties: 
+    //     1) Number of theaters (int)
+    int numTheaters = 13;
+    //     2) Cost of small popcorn (double)
+    double costSmallPopcorn = 8.9;
+    //     3) Cost of one ticket (double)
+    double costOneTicket = 19.9;
+    //     4) Number of IMAX theaters (int)
+    int numImaxTheaters = 2;
+    //     5) Number of movies available (int)
+    int numMoviesAvailable = 15;
+    // 3 things it can do:
+    //     1) Sell movie tickets
+    void chargeForTicket(); 
+    //     2) Play movies
+    void playMovie();
+    //     3) Sell food and snacks
+    float chargeForSnacks (std::string itemPurchased, float fullCharge); // returns items purchasing and amount charged.
+};
+
+struct Dog 
+{
+    // 5 properties:
+    //     1) Number of legs (int)
+    int numLegs = 4;
+    //     2) Name (std::string)
+    std::string name = "Bucky";
+    //     3) Age (int)
+    int age = 4;
+    //     4) Number of eyes (int)
+    int numEyes = 2;
+    //     5) Breed (std::string)
+    std::string breed = "Golden Retriever";
+    // 3 things it can do:
+    //     1) Bark
+    void bark();
+    //     2) Wag tail
+    void wagTail(std::string leftOrRight);
+    //     3) Perform a trick
+    void peformTrick (std::string trickType);
+
+};
+
+struct Guitar
+{
+
+    // 5 properties:
+    //     1) Number of strings (int)
+    int numStrings = 6;
+    //     2) Number of frets (int)
+    int numFrets = 22;
+    //     3) Volume level (float)
+    float volumeLevel = 3.7f;
+    //     4) Brand (std::string)
+    std::string brand = "Gibson";
+    //     5) Material (std::string)
+    std::string material = "Spruce Wood";
+    // 3 things it can do:
+    //     1) Play individual notes
+    void playNote(std::string whichNote);
+    //     2) Be tuned to different tunings
+    void tuneGuitar(std::string whichString);
+    //     3) Strum notes
+    void strumNotes (std::string whichChord);
+
+};
+
+struct Wings
+{
+    // 5 properties:
+    //     1) Wing shape (std::string)
+    std::string wingShape = "Airfoil";
+    //     2) Wing length (int)
+    int wingLength = 130;
+    //     3) Ratio of wings length to width (int)
+    int ratioLengthToWidth = 55;
+    //     4) Angle of wing tilt (float)
+    float tiltAngle = 20.f;
+    //     5) Flap angle (float)
+    float flapAngle = 30.f;
+    // 3 things it can do:
+    //     1) Generate lift
+    void generateLift();
+    //     2) Provide stability
+    void stabilizeWings();
+    //     3) Adjust to various conditions and scenarios
+    void emergencyLanding(std::string nearestAirport);
+}; 
+
+struct Engines 
+{
+//     5 properties:
+//         1) Number of engines (int)
+    int numEngines = 2;
+//         2) Power output (float)
+    float powerOutput = 30.f;
+//         3) Fuel efficiency (float)
+    float fuelEfficiency = 10.f;
+//         4) Emissions (float)
+    float engineEmissions = 20.f;
+//         5) Size (int)
+    int engineSize = 20;
+//     3 things it can do:
+//         1) Provide thrust
+    void engageThrust();
+//         2) Generate elecricity
+    void increasePower();
+//         3) Control speed and altitude
+    void increaseAltitude(int amountOfIncrease);
+};
+
+struct CargoSpace
+{
+    // 5 properties:
+    //     1) Volume (float)
+    float cargoVolume = 64.f;
+    //     2) Weight (int)
+    int cargoWeight = 1300;
+    //     3) Temperature (int)
+    int cargoTemp = 75;
+    //     4) Capacity (int)
+    int cargoCapacity = 400;
+    //     5) Loading time (float)
+    float loadingTime = 45;
+    // 3 things it can do:
+    //     1) Transport
+    void transportCargo();
+    //     2) Store
+    void storeCargo();
+    //     3) Secure
+    void secureCargo();
+
+};
+
+struct Tail
+{
+    // 5 properties:
+    //     1) Tail length (int)
+    int tailLength = 55;
+    //     2) Tail width (int)
+    int tailWidth = 85;
+    //     3) Elevator angle (float)
+    float elevatorAngle = 45.f;
+    //     4) Stabilizer angle (float)
+    float stabilizerAngle = 45.f;
+    //     5) Yaw control width (int)
+    int yawControlWidth = 30;
+    // 3 things it can do:
+    //     1) Create stability
+    void stabilizeTail();
+    //     2) Create lift
+    void adjustTailLiftParameter();
+    //     3) Control side to side movement
+    void adjustSideControl();
+};
+
+struct Fuselage
+{
+    // 5 properties:
+    //     1) Length of fuselage (int)
+    int fuselageLength = 30;
+    //     2) Width of fuselage (int)
+    int fuselageWidth = 15;
+    //     3) Height of fuselage (float)
+    float fuselageHeight = 19.f;
+    //     4) Capacity of fuselage (int)
+    int fuselageCapacity = 59;
+    //     5) Drag from fuselage (float)
+    float fuselageDrag = 32.2f;
+    // 3 things it can do:
+    //     1) Enclose passenger cabin and cargo
+    void encloseCabin();
+    //     2) Support wings and tail
+    void checkCondition();
+    //     3) Maintain internal pressure
+    void pressureControlCheck();
+
+};
+
+struct Airplane
+{
+    // 5 properties: 
+    //     1) Wings
+    Wings wings;
+    //     2) Engines   
+    Engines engines;
+    //     3) Cargo space
+    CargoSpace cargoSpace;
+    //     4) Tail
+    Tail tail;
+    //     5) Fuselage
+    Fuselage fuselage;
+    // 3 things it can do:
+    //     1) Fly
+    void initiateFlightProtocol();
+    //     2) Transport passengers and cargo
+    void transportPassengers(int passengerAmount);
+    //     3) Communicate with air traffic control
+    void dispatchToAirTraffic();
+};
 
 /*
 =================
