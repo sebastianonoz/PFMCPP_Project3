@@ -846,7 +846,7 @@ struct CarWash
     //    - detail the car interior
 };
 
-struct cellphone
+struct Cellphone
 {
     /*
     5 properties: 
@@ -879,7 +879,7 @@ struct MovieTheater
     */    
 };
 
-struct dog 
+struct Dog 
 {
     /*
     5 properties:
@@ -895,7 +895,7 @@ struct dog
     */
 };
 
-struct guitar
+struct Guitar
 {
     /*
     5 properties:
@@ -911,7 +911,7 @@ struct guitar
 */
 };
 
-struct wings
+struct Wings
 {
     /*
     5 properties:
@@ -927,7 +927,7 @@ struct wings
     */
 }; 
 
-struct engines 
+struct Engines 
 {
     /*
     5 properties:
@@ -960,7 +960,7 @@ struct CargoSpace
 
 };
 
-struct tail
+struct Tail
 {
     /*
     5 properties:
@@ -976,7 +976,7 @@ struct tail
     */
 };
 
-struct fuselage
+struct Fuselage
 {
     /*
     5 properties:
@@ -993,7 +993,7 @@ struct fuselage
 
 };
 
-struct airplane
+struct Airplane
 {
     /*
     5 properties: 
@@ -1046,7 +1046,7 @@ struct CarWash
     //    - detail the car interior
 };
 
-struct cellphone
+struct Cellphone
 {
 // 5 properties: 
     // 1) Number of camera lens (int)
@@ -1085,7 +1085,7 @@ struct MovieTheater
     //     3) Sell food and snacks
 };
 
-struct dog 
+struct Dog 
 {
     // 5 properties:
     //     1) Number of legs (int)
@@ -1105,7 +1105,7 @@ struct dog
 
 };
 
-struct guitar
+struct Guitar
 {
 
     // 5 properties:
@@ -1126,7 +1126,7 @@ struct guitar
 
 };
 
-struct wings
+struct Wings
 {
     // 5 properties:
     //     1) Wing shape (std::string)
@@ -1145,7 +1145,7 @@ struct wings
     //     3) Adjust to various conditions and scenarios
 }; 
 
-struct engines 
+struct Engines 
 {
 //     5 properties:
 //         1) Number of engines (int)
@@ -1155,9 +1155,9 @@ struct engines
 //         3) Fuel efficiency (float)
     float fuelEfficiency = 10.f;
 //         4) Emissions (float)
-    float emissions = 20.f;
+    float engineEmissions = 20.f;
 //         5) Size (int)
-    int size = 20;
+    int engineSize = 20;
 //     3 things it can do:
 //         1) Provide thrust
 //         2) Generate elecricity
@@ -1168,13 +1168,13 @@ struct CargoSpace
 {
     // 5 properties:
     //     1) Volume (float)
-    float volume = 64.f;
+    float cargoVolume = 64.f;
     //     2) Weight (int)
-    int weight = 1300;
+    int cargoWeight = 1300;
     //     3) Temperature (int)
-    int temp = 75;
+    int cargoTemp = 75;
     //     4) Capacity (int)
-    int capacity = 400;
+    int cargoCapacity = 400;
     //     5) Loading time (float)
     float loadingTime = 45;
     // 3 things it can do:
@@ -1184,7 +1184,7 @@ struct CargoSpace
 
 };
 
-struct tail
+struct Tail
 {
     // 5 properties:
     //     1) Tail length (int)
@@ -1203,37 +1203,43 @@ struct tail
     //     3) Control side to side movement
 };
 
-struct fuselage
+struct Fuselage
 {
-    /*
-    5 properties:
-        1) Length of fuselage (int)
-        2) Width of fuselage (int)
-        3) Height of fuselage (float)
-        4) Capacity of fuselage (int)
-        5) Drag from fuselage (float)
-    3 things it can do:
-        1) Enclose passenger cabin and cargo
-        2) Support wings and tail
-        3) Maintain internal pressure
-    */
+    // 5 properties:
+    //     1) Length of fuselage (int)
+    int fuselageLength = 30;
+    //     2) Width of fuselage (int)
+    int fuselageWidth = 15;
+    //     3) Height of fuselage (float)
+    float fuselageHeight = 19.f;
+    //     4) Capacity of fuselage (int)
+    int fuselageCapacity = 59;
+    //     5) Drag from fuselage (float)
+    float fuselageDrag = 32.2f;
+    // 3 things it can do:
+    //     1) Enclose passenger cabin and cargo
+    //     2) Support wings and tail
+    //     3) Maintain internal pressure
 
 };
 
-struct airplane
+struct Airplane
 {
-    /*
-    5 properties: 
-        1) Wings
-        2) Engines
-        3) Cargo space
-        4) Tail
-        5) Fuselage
-    3 things it can do:
-        1) Fly
-        2) Transport passengers and cargo
-        3) Communicate with air traffic control
-    */
+    // 5 properties: 
+    //     1) Wings
+    Wings wings;
+    //     2) Engines   
+    Engines engines;
+    //     3) Cargo space
+    CargoSpace cargoSpace;
+    //     4) Tail
+    Tail tail;
+    //     5) Fuselage
+    Fuselage fuselage;
+    // 3 things it can do:
+    //     1) Fly
+    //     2) Transport passengers and cargo
+    //     3) Communicate with air traffic control
 };
 
 /*
