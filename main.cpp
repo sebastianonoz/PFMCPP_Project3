@@ -1767,6 +1767,85 @@ struct CarWash
     Keep this in mind when you define your UDTs in this project part.
     */
 };
+
+struct Guitar
+{
+
+    // 5 properties:
+    //     1) Number of strings (int)
+    int numStrings = 6;
+    //     2) Number of frets (int)
+    int numFrets = 22;
+    //     3) Volume level (float)
+    float volumeLevel = 3.7f;
+    //     4) Brand (std::string)
+    std::string brand = "Gibson";
+    //     5) Material (std::string)
+    std::string material = "Spruce Wood";
+
+    struct Strings
+    {
+        // Low E string gauge
+        float lowEStringGauge = .040f; 
+
+        float dStringGauge = .010f;
+        std::string stringBrand = "Ernie Ball";
+        std::string sku = "2229";
+        std::string stringMaterial ="Nickel";
+        
+        void stringBend(std::string whichString);
+        void stringSlide(std::string targetNote);
+        void stringSnap(std::string whichString);
+    
+    };
+    // 3 things it can do:
+    //     1) Play individual notes
+    void playNote(Guitar guitar, Strings strings, std::string whichString, std::string whichNote);
+    //     2) Be tuned to different tunings
+    void tuneGuitar(Guitar guitar, Strings strings, std::string whichString);
+    //     3) Strum notes
+    void strumNotes (Guitar guitar, Strings strings, std::string whichChord);
+
+    Strings stringIsPlayed (Strings strings);
+};
+
+struct Engines 
+{
+//     5 properties:
+//         1) Number of engines (int)
+    int numEngines = 2;
+//         2) Power output (float)
+    float powerOutput = 30.f;
+//         3) Fuel efficiency (float)
+    float fuelEfficiency = 10.f;
+//         4) Emissions (float)
+    float engineEmissions = 20.f;
+//         5) Size (int)
+    int engineSize = 20;
+    
+    struct Turbines
+    {
+        int lowPressureTurbineLenth = 84; 
+        int highPressureTurbineWidth = 93;
+        std::string turbineBrand = "GE";
+        std::string turbineModel = "CF3942";
+        std::string turbineMaterial ="Titanium";
+        
+        void turbineThrust(std::string whichTurbine);
+        void turbineEfficiency(std::string targetSpeed);
+        void turbineNoise(std::string whichTurbine);
+    };
+
+//     3 things it can do:
+//         1) Provide thrust
+    void engageThrust(Engines engines, Turbines turbines);
+//         2) Generate elecricity
+    void increasePower(Engines engines, Turbines turbines);
+//         3) Control speed and altitude
+    void increaseAltitude(Engines engines, Turbines turbines, int amountOfIncrease);
+
+    Turbines engaged;
+};
 /*
 =================
 Part 1e - Step 12: Commit
