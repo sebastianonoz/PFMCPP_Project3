@@ -916,7 +916,6 @@ struct Dog
     void wagTail(std::string leftOrRight);
     //     3) Perform a trick
     void peformTrick (std::string trickType);
-
 };
 
 struct Guitar
@@ -955,12 +954,10 @@ struct Guitar
     void tuneString(Strings strings,std::string whichString);
     //     3) Strum notes
     void strumNotes (Strings strings, std::string whichChord);
-    
 };
 
 struct Wings
 {
-
     // 5 properties:
     //     1) Wing shape (std::string)
     std::string shape = "Airfoil";
@@ -979,12 +976,10 @@ struct Wings
     void stabilize();
     //     3) Adjust to various conditions and scenarios
     void adjustToTurbulance();
-
 }; 
 
 struct Engines 
 {
-
 //     5 properties:
 //         1) Number of engines (int)
     int numEngines = 2;
@@ -1042,7 +1037,6 @@ struct CargoSpace
     void storeCargo();
     //     3) Secure
     void secureCargo();
-
 };
 
 struct Tail
@@ -1087,7 +1081,6 @@ struct Fuselage
     void supportWingsAndTail();
     //     3) Maintain internal pressure
     void pressureControlCheck();
-
 };
 
 struct Airplane
