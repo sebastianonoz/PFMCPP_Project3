@@ -867,11 +867,11 @@ struct Cellphone
     
     // 3 things it can do:
     //     1) Make phone calls
-    void callNumber(std::string phoneNumber);
+    void makePhoneCall(std::string phoneNumber);
     //     2) Take photos and videos
-    void takePhoto(); 
+    void takePhotoAndVideo(); 
     //     3) Conenct to the internet
-    void connectOnline(std::string wifiConnection);
+    void connectToInternet(std::string wifiConnection);
 };
 
 struct MovieTheater
@@ -889,7 +889,7 @@ struct MovieTheater
     int numMoviesAvailable = 15;
     // 3 things it can do:
     //     1) Sell movie tickets
-    void chargeForTicket(); 
+    void sellMovieTicket(); 
     //     2) Play movies
     void playMovie();
     //     3) Sell food and snacks
@@ -951,7 +951,7 @@ struct Guitar
     //     1) Play individual notes
     void playNote(Strings strings, std::string whichNote);
     //     2) Be tuned to different tunings
-    void tuneString(Strings strings,std::string whichString);
+    void tune(Strings strings,std::string whichString);
     //     3) Strum notes
     void strumNotes (Strings strings, std::string whichChord);
 };
@@ -1032,11 +1032,11 @@ struct CargoSpace
     float loadingTime = 45;
     // 3 things it can do:
     //     1) Transport
-    void transportCargo();
+    void transport();
     //     2) Store
-    void storeCargo();
+    void store();
     //     3) Secure
-    void secureCargo();
+    void secure();
 };
 
 struct Tail
@@ -1080,7 +1080,7 @@ struct Fuselage
     //     2) Support wings and tail
     void supportWingsAndTail();
     //     3) Maintain internal pressure
-    void pressureControlCheck();
+    void maintainInternalPressure();
 };
 
 struct Airplane
