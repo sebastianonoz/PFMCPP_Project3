@@ -79,55 +79,58 @@ Part 1a - Step 2: Assignment
     Fill in the remaining blanks below which describe this car interior in terms of sub-objects.
 
 Main Object: Car Interior
-    Sub Object: Steering Wheel
         Name 4 nouns you'll find on the [Sub Object]
-            1) paddle shifters
-            2) 'cruise control' controls
-            3) 
-            4) 
+            1) Paddle shifters
+            2) Cruise control controls
+            3) Audio controls
+            4) Voice command controls
         Name 2 actions that the [Sub Object] can do:
-            1) adjust cruise control settings.
-            2)
-        
+            1) Adjust cruise control settings
+            2) Control audio and navigation functions using steering wheel buttons.
+            
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) Speedometer
+            2) Fuel gauge
+            3) Odometer
+            4) Tachometer
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) Display vehicle speed
+            2) Indicate amount of remaining fuel
+            3) Display total distance traveled by vehicle.
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) Temperature control
+            2) Air conditioning/heating unit
+            3) Ventilation system
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) Adjust the temperature
+            2) Control the airflow
+            3) Change the ventilation settings
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) Touchscreen display
+            2) Speakers
+            3) Audio/video input
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) Play music/videos
+            2) Connect to Bluetooth devices
+            3) Navigate through menus  
+        Name 3 actions that the [Sub Object] can do:
+            1) Access internet and social media
+            2) Use voice commands to control system
+            3) Display navigation and traffic information.
 
-    Sub Object: Seat 
+   Sub Object: Seat
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) Upholstery
+            2) Reclining mechanism
+            3) Headrest
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) Adjust the reclining angle
+            2) Adjust the headrest position. 
 */
 
 /*
@@ -196,53 +199,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 */
 
 /*
@@ -337,17 +294,7 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+
  */
 
  /*
@@ -434,65 +381,7 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
  */
 
 /*
@@ -544,9 +433,6 @@ MOVE THEM to the space below this block comment and put them in numerical order
     I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
     simply CUT and PASTE them in the space provided below:
 */
-
-
-
 
 
 
@@ -614,6 +500,22 @@ struct CarWash  //This is the empty struct, below my plain-English UDT.
 {
                 //notice that no code is written inside the curly braces.
 };
+
+/*
+Thing 1) Cellphone
+5 properties: 
+    1) Number of camera lens (int)
+    2) Manufacturer (std::string)
+    3) Ram (int)
+    4) Screen size (float)
+    5) Amount of storage (int)
+
+3 things it can do:
+    1) Make phone calls
+    2) Take photos and videos
+    3) Access the internet and apps.
+*/
+
 /*
 Notice that the struct name 'CarWash' conforms with the Course Coding Standard, described in the Readme.MD
 */
@@ -638,21 +540,6 @@ Part 1e - Step 3: Assignment
     - comment them out.
     - Do this for all 10 UDTs
     */
-
-struct CarWash 
-{
-    //5 properties:
-    //    - number of vacuum cleaners
-    //    - number of eco-friendly cleaning supplies
-    //    - stores the amount of water used per week.
-    //    - stores amount of profit made per week
-    //    - number of cars serviced per day
-    //3 things it can do:
-    //    - wash and wax car
-    //    - charge customer
-    //    - detail the car interior
-};
-
 /*
 =================
 Part 1e - Step 4: Commit
@@ -672,23 +559,7 @@ Part 1e - Step 5: Assignment
     - give the member variables relevant data types and reasonable default values
     - Do this for all 10 UDTs
  */
-struct CarWash 
-{
-    //number of vacuum cleaners                     
-    int numVacuumCleaners = 3; 
-    //number of eco-friendly cleaning supplies      
-    int numEcoFriendlyCleaningSupplies = 20;     
-    //stores the amount of water used per week.     
-    float waterUsedPerWeek = 200.f;            
-    //stores amount of profit made per week         
-    float profitPerWeek = 495.95f;               
-    //number of cars serviced per day               
-    int numberOfCarsServiced = 10;     
-    //3 things it can do:
-    //    - wash and wax car
-    //    - charge customer
-    //    - detail the car interior
-};
+
 /*
 
 =================
@@ -697,7 +568,7 @@ Part 1e - Step 6: Commit
 Now that you've made changes, make a commit!
 Be sure to make the commit message meaningful.
 */
-}  //end namespace Part1E_Step5
+}  // end namespace Part1E_Step5
 
 namespace Part1E_Step7
 {
@@ -709,29 +580,7 @@ Part 1e - Step 7: Assignment
   - add function parameters where it makes sense to have them.
   - if your functions return something other than 'void', add a comment explaining what is being returned.  see the example code below.
   */
-struct CarWash 
-{
-    //number of vacuum cleaners                     
-    int numVacuumCleaners = 3; 
-    //number of eco-friendly cleaning supplies      
-    int numEcoFriendlyCleaningSupplies = 20;     
-    //stores the amount of water used per week.     
-    float waterUsedPerWeek = 200.f;            
-    //stores amount of profit made per week         
-    float profitPerWeek = 495.95f;               
-    //number of cars serviced per day               
-    int numberOfCarsServiced = 10;     
-    
-    //3 things it can do:
-    //wash and wax car
-    void washAndWaxCar(); 
-    
-    //charge customer       //NOTE: function parameter is relevant to the work that the function performs
-    float chargeCustomer(float discountPercentage); //returns the total amount charged.
-    
-    //detail the car interior
-    void detailInterior();
-};
+
 /*
 =================
 Part 1e - Step 8: Commit
@@ -753,48 +602,8 @@ Part 1e - Step 9: Assignment
     - these nested classes are in addition to the 10 UDTs you are defining in this project.
     - this nested class MUST be related to the class it is nested inside
 */
-struct CarWash 
-{
-    //number of vacuum cleaners                     
-    int numVacuumCleaners = 3; 
-    //number of eco-friendly cleaning supplies      
-    int numEcoFriendlyCleaningSupplies = 20;     
-    //stores the amount of water used per week.     
-    float waterUsedPerWeek = 200.f;            
-    //stores amount of profit made per week         
-    float profitPerWeek = 495.95f;               
-    //number of cars serviced per day               
-    int numberOfCarsServiced = 10;     
-    
-    //this is the nested UDT:
-    struct Car                  //Note that the nested type 'Car' is related to the 'CarWash' 
-    {
-        //5 member variables with relevant data types.  the names are relevant to the UDT's purpose.
-        bool isAPickupTruck = false;
-        float gasMileage = 26.2f;        
-        int year = 1985;
-        std::string manufacturer = "Toyota";
-        std::string model = "Corolla";
 
-        // 3 member functions.  
-        // they take multiple parameters. some parameters have default values.
-        // the parameter names are related to the work the function will perform.
-        // all function and variable names conform to the course coding standard, described in the Readme.MD file
-        void fillTank(float costPerGallon, double fuelAmountInGallons = 2.0, bool requiresDiesel = false);  
-        void breakDown(std::string failureType, bool requiresTow = false);
-        int getMilesTraveledAnnually(bool includeUberLyftTrips); //3) returns the number of miles traveled
-    }; //this is the end of the nested class
 
-    //3 things it can do:
-    //wash and wax car
-    void washAndWaxCar(); 
-    
-    //charge customer       //NOTE: function parameter is relevant to the work that the function performs
-    float chargeCustomer(float discountPercentage); //returns the total amount charged.
-    
-    //detail the car interior
-    void detailInterior();
-};
 /*
 =================
 Part 1e - Step 10: Commit
@@ -821,102 +630,6 @@ The compiler parses the files from top to bottom.
 This means you can only use a UDT AFTER you have written the closing curly brace for it };
 
 Keep this in mind when you define the function parameter lists to use some of your User-Defined Types.
-*/
-struct CarWash 
-{
-    //number of vacuum cleaners                     
-    int numVacuumCleaners = 3; 
-    //number of eco-friendly cleaning supplies      
-    int numEcoFriendlyCleaningSupplies = 20;     
-    //stores the amount of water used per week.     
-    float waterUsedPerWeek = 200.f;            
-    //stores amount of profit made per week         
-    float profitPerWeek = 495.95f;               
-    //number of cars serviced per day               
-    int numberOfCarsServiced = 10;     
-    
-    struct Car                   
-    {
-        bool isAPickupTruck = false;
-        float gasMileage = 26.2f;        
-        int year = 1985;
-        std::string manufacturer = "Toyota";
-        std::string model = "Corolla";
-
-        void fillTank(float costPerGallon, double fuelAmountInGallons = 2.0, bool requiresDiesel = false);  
-        void breakDown(std::string failureType, bool requiresTow = false);
-        int getMilesTraveledAnnually(bool includeUberLyftTrips); 
-    };
-
-    //wash and wax car
-    void washAndWaxCar(Car car); //a member function whose parameter is a UDT. 
-    //Notice that `Car car` is written AFTER `struct Car { ... };
-
-    //charge customer
-    float chargeCustomer(float discountPercentage); 
-    //detail interior
-    void detailInterior(Car car);
-    
-    //5) a member variable whose type is a UDT.
-    Car carBeingServiced; //Notice that this is written AFTER `struct Car { ... };
-
-    /*
-    A Note regarding functions that use UDTs in their parameter list:
-    Pay attention to the member functions that take an instance of 'Car'
-    Notice that there is a member variable of the same type.
-
-    It makes sense to pass a Car to the function 'washAndWaxCar' because car washes service MANY cars
-    However, they only service ONE car at a time.
-    the carBeingServiced's value would change every time you wash and wax the car. 
-
-    I see many students who write code emulating this format, but their usage does not make logical sense.  
-    Consider the following snippet:
-
-    struct SoccerTeam
-    {
-        struct Manager
-        {
-            ...
-        };
-
-        // train their skills
-        void trainPlayerSkills(Manager managerA);
-    
-        Manager teamManager;
-    };
-
-    It does not make sense to pass in a new Manager whenever you are going to train your team players.
-    Soccer teams have ONE manager.
-
-    a much more relevant usage would be adding a member function that hires a new manager:
-
-    struct SoccerTeam
-    {
-        struct Manager
-        {
-            ...
-        };
-
-        void hireNewManager(Manager newManager);
-    
-        Manager teamManager;
-    };
-
-    We can safely assume that the 'Manager' instance that is being passed to that function will be replacing the current 'teamManager' variable without looking at any other code.
-    This is because the function name and function argument clearly indicate what they are/what they do.
-
-    Your function names and parameter names should make LOGICAL SENSE.
-    Readers of your code should be able to INTUITIVELY understand what your function implementations will do without actually seeing the implementations.
-
-    Keep this in mind when you define your UDTs in this project part.
-    */
-};
-/*
-=================
-Part 1e - Step 12: Commit
-=================
-Now that you've made changes, make a commit!
-Be sure to make the commit message meaningful.
 */
 } //end namespace Part1E_Step11
 
@@ -955,6 +668,10 @@ struct CellPhone
     bool sendAText(std::string number, std::string messageToSend); //returns true if the text was sent
     int runApplication(std::string applicationName); //returns how much memory (bytes) the application asked for
 };
+
+
+
+
  /*
 =================
 Part 1e - Step 14: Commit
@@ -991,6 +708,9 @@ Fix anything that needs fixing
 You should see "good to go" in the program output
 */
 
+
+
+
 /*
 =================
 Part 1e - Step 18: Commit
@@ -1010,13 +730,371 @@ Part 1e - Step 19: Request a review
 paste your code below
 */
 
+/*
+Thing 1) Cellphone
+5 properties: 
+    1) Number of camera lens (int)
+    2) Manufacturer (std::string)
+    3) Ram (int)
+    4) Screen size (float)
+    5) Amount of storage (int)
+3 things it can do:
+    1) Make phone calls
+    2) Take photos and videos
+    3) Access the internet and apps.
+
+Thing 2) Movie Theater
+5 properties: 
+    1) Number of theaters (int)
+    2) Cost of small popcorn (double)
+    3) Cost of one ticket (double)
+    4) Number of IMAX theaters (int)
+    5) Number of movies available (int)
+3 things it can do:
+    1) Sell movie tickets
+    2) Play movies
+    3) Sell food and snacks
+
+Thing 3) Dog
+5 properties:
+    1) Number of legs (int)
+    2) Name (std::string)
+    3) Age (int)
+    4) Number of eyes (int)
+    5) Breed (std::string)
+3 things it can do:
+    1) Bark
+    2) Wag tail
+    3) Perform a trick
+
+Thing 4) Guitar
+5 properties:
+    1) Number of strings (int)
+    2) Number of frets (int)
+    3) Volume level (float)
+    4) Brand (std::string)
+    5) Material (std::string)
+3 things it can do:
+    1) Play individual notes
+    2) Be tuned to different tunings
+    3) Strum notes
+Thing 5) Wings
+5 properties:
+    1) Wing shape (std::string)
+    2) Wing length (int)
+    3) Ratio of wings length to width (int)
+    4) Angle of wing tilt (float)
+    5) Flap angle (float)
+3 things it can do:
+    1) Generate lift
+    2) Provide stability
+    3) Adjust to various conditions and scenarios
+
+Thing 6) Engines
+5 properties:
+    1) Number of engines (int)
+    2) Power output (float)
+    3) Fuel efficiency (float)
+    4) Emissions (float)
+    5) Size (int)
+3 things it can do:
+    1) Provide thrust
+    2) Generate elecricity
+    3) Control speed and altitude
+
+Thing 7) Cargo space
+5 properties:
+    1) Volume (float)
+    2) Weight (int)
+    3) Temperature (int)
+    4) Capacity (int)
+    5) Loading time (float)
+3 things it can do:
+    1) Transport
+    2) Store
+    3) Secure
+
+Thing 8) Tail
+5 properties:
+    1) Tail length (int)
+    2) Tail width (int)
+    3) Elevator angle (float)
+    4) Stabilizer angle (float)
+    5) Yaw control width (int)
+3 things it can do:
+    1) Create stability
+    2) Create lift
+    3) Control side to side movement
+
+Thing 9) Fuselage
+5 properties:
+    1) Length of fuselage (int)
+    2) Width of fuselage (int)
+    3) Height of fuselage (float)
+    4) Capacity of fuselage (int)
+    5) Drag from fuselage (float)
+3 things it can do:
+    1) Enclose passenger cabin and cargo
+    2) Support wings and tail
+    3) Maintain internal pressure
+
+Thing 10) Airplane
+5 properties: 
+    1) Wings
+    2) Engines
+    3) Cargo space
+    4) Tail
+    5) Fuselage
+3 things it can do:
+    1) Fly
+    2) Transport passengers and cargo
+    3) Communicate with air traffic control
+*/
+
+struct Cellphone
+{
+// 5 properties: 
+    // 1) Number of camera lens (int)
+    int numCameraLens = 2;
+    //     2) Manufacturer (std::string)
+    std::string manufacaturer = "Apple";
+    //     3) Ram (int)
+    int ram = 16;
+    //     4) Screen size (float)
+    float screenSize = 6.2f;
+    //     5) Amount of storage (int)
+    int storageAmount = 32;
+    
+    // 3 things it can do:
+    //     1) Make phone calls
+    void makePhoneCall(std::string phoneNumber);
+    //     2) Take photos and videos
+    void takePhotoAndVideo(); 
+    //     3) Conenct to the internet
+    void connectToInternet(std::string wifiConnection);
+};
+
+struct MovieTheater
+{
+    // 5 properties: 
+    //     1) Number of theaters (int)
+    int numTheaters = 13;
+    //     2) Cost of small popcorn (double)
+    double costSmallPopcorn = 8.9;
+    //     3) Cost of one ticket (double)
+    double costOneTicket = 19.9;
+    //     4) Number of IMAX theaters (int)
+    int numImaxTheaters = 2;
+    //     5) Number of movies available (int)
+    int numMoviesAvailable = 15;
+    // 3 things it can do:
+    //     1) Sell movie tickets
+    void sellMovieTicket(); 
+    //     2) Play movies
+    void playMovie();
+    //     3) Sell food and snacks
+    float sellFoodAndSnacks (std::string itemPurchased, float fullChargeAmount); // returns items purchasing and amount charged.
+};
+
+struct Dog 
+{
+    // 5 properties:
+    //     1) Number of legs (int)
+    int numLegs = 4;
+    //     2) Name (std::string)
+    std::string name = "Bucky";
+    //     3) Age (int)
+    int age = 4;
+    //     4) Number of eyes (int)
+    int numEyes = 2;
+    //     5) Breed (std::string)
+    std::string breed = "Golden Retriever";
+    // 3 things it can do:
+    //     1) Bark
+    void bark();
+    //     2) Wag tail
+    void wagTail(std::string leftOrRight);
+    //     3) Perform a trick
+    void peformTrick (std::string trickType);
+};
+
+struct Guitar
+{
+
+    // 5 properties:
+    //     1) Number of strings (int)
+    int numStrings = 6;
+    //     2) Number of frets (int)
+    int numFrets = 22;
+    //     3) Volume level (float)
+    float volumeLevel = 3.7f;
+    //     4) Brand (std::string)
+    std::string brand = "Gibson";
+    //     5) Material (std::string)
+    std::string material = "Spruce Wood";
+
+    struct Strings
+    {
+        float lowEStringGauge = .040f; 
+
+        float dStringGauge = .010f;
+        std::string brand = "Ernie Ball";
+        std::string sku = "2229";
+        std::string material ="Nickel";
+        
+        void bend(std::string whichString);
+        void slide(std::string targetNote);
+        void snap(std::string whichString);
+    
+    };
+    // 3 things it can do:
+    //     1) Play individual notes
+    void playNote(Strings strings, std::string whichNote);
+    //     2) Be tuned to different tunings
+    void tune(Strings strings,std::string whichString);
+    //     3) Strum notes
+    void strumNotes (Strings strings, std::string whichChord);
+};
+
+struct Wings
+{
+    // 5 properties:
+    //     1) Wing shape (std::string)
+    std::string shape = "Airfoil";
+    //     2) Wing length (int)
+    int length = 130;
+    //     3) Ratio of wings length to width (int)
+    int ratioLengthToWidth = 55;
+    //     4) Angle of wing tilt (float)
+    float tiltAngle = 20.f;
+    //     5) Flap angle (float)
+    float flapAngle = 30.f;
+    // 3 things it can do:
+    //     1) Generate lift
+    void generateLift();
+    //     2) Provide stability
+    void stabilize();
+    //     3) Adjust to various conditions and scenarios
+    void adjustToTurbulance();
+}; 
+
+struct Engines 
+{
+//     5 properties:
+//         1) Number of engines (int)
+    int numEngines = 2;
+//         2) Power output (float)
+    float powerOutput = 30.f;
+//         3) Fuel efficiency (float)
+    float fuelEfficiency = 10.f;
+//         4) Emissions (float)
+    float emissions = 20.f;
+//         5) Size (int)
+    int size = 20;
+
+    struct Turbines
+    {
+        int lowPressureLenth = 84; 
+        int highPressureWidth = 93;
+        std::string brand = "GE";
+        std::string model = "CF3942";
+        std::string material ="Titanium";
+
+        void thrust(std::string whichTurbine);
+        void efficiency(std::string targetSpeed);
+        void noiseLevel(std::string whichTurbine);
+    };
 
 
+//     3 things it can do:
+//         1) Provide thrust
+    void engageThrust(Turbines turbines);
+//         2) Generate elecricity
+    void increasePower(Turbines turbines, int amountOfIncrease);
+//         3) Control speed and altitude
+    void controlSpeedAndAltitude(Turbines turbines, int amountOfChange);
 
+    Turbines engaged;
+};
 
+struct CargoSpace
+{
+    // 5 properties:
+    //     1) Volume (float)
+    float volume = 64.f;
+    //     2) Weight (int)
+    int weight = 1300;
+    //     3) Temperature (int)
+    int temperature = 75;
+    //     4) Capacity (int)
+    int capacity = 400;
+    //     5) Loading time (float)
+    float loadingTime = 45;
+    // 3 things it can do:
+    //     1) Transport
+    void transport();
+    //     2) Store
+    void store();
+    //     3) Secure
+    void secure();
+};
 
+struct Tail
+{
+    // 5 properties:
+    //     1) Tail length (int)
+    int length = 55;
+    //     2) Tail width (int)
+    int width = 85;
+    //     3) Elevator angle (float)
+    float elevatorAngle = 45.f;
+    //     4) Stabilizer angle (float)
+    float stabilizerAngle = 45.f;
+    //     5) Yaw control width (int)
+    int yawControlWidth = 30;
+    // 3 things it can do:
+    //     1) Create stability
+    void stabilize();
+    //     2) Create lift
+    void createLift();
+    //     3) Control side to side movement
+    void controlSideToSide();
+};
 
+struct Fuselage
+{
+    // 5 properties:
+    //     1) Length of fuselage (int)
+    int length = 30;
+    //     2) Width of fuselage (int)
+    int width = 15;
+    //     3) Height of fuselage (float)
+    float height = 19.f;
+    //     4) Capacity of fuselage (int)
+    int capacity = 59;
+    //     5) Drag from fuselage (float)
+    float drag = 32.2f;
+    // 3 things it can do:
+    //     1) Enclose passenger cabin and cargo
+    void encloseCabin();
+    //     2) Support wings and tail
+    void supportWingsAndTail();
+    //     3) Maintain internal pressure
+    void maintainInternalPressure();
+};
 
+struct Airplane
+{
+    Wings wings;  
+    Engines engines;
+    CargoSpace cargoSpace;
+    Tail tail;
+    Fuselage fuselage;
+
+    void fly();
+    void transportPassengers(int passengerAmount);
+    void dispatchToAirTraffic();
+};
 
 int main()
 {
