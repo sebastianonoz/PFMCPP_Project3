@@ -867,12 +867,13 @@ struct Cellphone
     
     // 3 things it can do:
     //     1) Make phone calls
-    void callNumber (std::string phoneNumber);
+    void callNumber(std::string phoneNumber);
     //     2) Take photos and videos
-    void takePhoto (); 
+    void takePhoto(); 
     //     3) Conenct to the internet
-    void connectOnline (std::string wifiConnection);
+    void connectOnline(std::string wifiConnection);
 };
+
 struct MovieTheater
 {
     // 5 properties: 
@@ -892,8 +893,9 @@ struct MovieTheater
     //     2) Play movies
     void playMovie();
     //     3) Sell food and snacks
-    float chargeForSnacks (std::string itemPurchased, float fullCharge); // returns items purchasing and amount charged.
+    float sellFoodAndSnacks (std::string itemPurchased, float fullChargeAmount); // returns items purchasing and amount charged.
 };
+
 struct Dog 
 {
     // 5 properties:
@@ -916,6 +918,7 @@ struct Dog
     void peformTrick (std::string trickType);
 
 };
+
 struct Guitar
 {
 
@@ -933,35 +936,36 @@ struct Guitar
 
     struct Strings
     {
-        // Low E string gauge
         float lowEStringGauge = .040f; 
 
         float dStringGauge = .010f;
-        std::string stringBrand = "Ernie Ball";
+        std::string brand = "Ernie Ball";
         std::string sku = "2229";
-        std::string stringMaterial ="Nickel";
+        std::string material ="Nickel";
         
-        void stringBend(std::string whichString);
-        void stringSlide(std::string targetNote);
-        void stringSnap(std::string whichString);
+        void bend(std::string whichString);
+        void slide(std::string targetNote);
+        void snap(std::string whichString);
     
     };
     // 3 things it can do:
     //     1) Play individual notes
-    void playNote(std::string whichNote);
+    void playNote(Strings strings, std::string whichNote);
     //     2) Be tuned to different tunings
-    void tuneGuitar(std::string whichString);
+    void tuneString(Strings strings,std::string whichString);
     //     3) Strum notes
-    void strumNotes (std::string whichChord);
-
+    void strumNotes (Strings strings, std::string whichChord);
+    
 };
+
 struct Wings
 {
+
     // 5 properties:
     //     1) Wing shape (std::string)
-    std::string wingShape = "Airfoil";
+    std::string shape = "Airfoil";
     //     2) Wing length (int)
-    int wingLength = 130;
+    int length = 130;
     //     3) Ratio of wings length to width (int)
     int ratioLengthToWidth = 55;
     //     4) Angle of wing tilt (float)
@@ -972,12 +976,15 @@ struct Wings
     //     1) Generate lift
     void generateLift();
     //     2) Provide stability
-    void stabilizeWings();
+    void stabilize();
     //     3) Adjust to various conditions and scenarios
-    void emergencyLanding(std::string nearestAirport);
+    void adjustToTurbulance();
+
 }; 
+
 struct Engines 
 {
+
 //     5 properties:
 //         1) Number of engines (int)
     int numEngines = 2;
@@ -986,51 +993,46 @@ struct Engines
 //         3) Fuel efficiency (float)
     float fuelEfficiency = 10.f;
 //         4) Emissions (float)
-    float engineEmissions = 20.f;
+    float emissions = 20.f;
 //         5) Size (int)
-    int engineSize = 20;
+    int size = 20;
 
     struct Turbines
     {
-        int lowPressureTurbineLenth = 84; 
-        int highPressureTurbineWidth = 93;
-        std::string turbineBrand = "GE";
-        std::string turbineModel = "CF3942";
-        std::string turbineMaterial ="Titanium";
+        int lowPressureLenth = 84; 
+        int highPressureWidth = 93;
+        std::string brand = "GE";
+        std::string model = "CF3942";
+        std::string material ="Titanium";
 
-        void turbineThrust(std::string whichTurbine);
-        void turbineEfficiency(std::string targetSpeed);
-        void turbineNoise(std::string whichTurbine);
+        void thrust(std::string whichTurbine);
+        void efficiency(std::string targetSpeed);
+        void noiseLevel(std::string whichTurbine);
     };
 
+
 //     3 things it can do:
 //         1) Provide thrust
-    void engageThrust(Engines engines, Turbines turbines);
+    void engageThrust(Turbines turbines);
 //         2) Generate elecricity
-    void increasePower(Engines engines, Turbines turbines);
+    void increasePower(Turbines turbines, int amountOfIncrease);
 //         3) Control speed and altitude
-    void increaseAltitude(Engines engines, Turbines turbines, int amountOfIncrease);
+    void controlSpeedAndAltitude(Turbines turbines, int amountOfChange);
 
     Turbines engaged;
-//     3 things it can do:
-//         1) Provide thrust
-    void engageThrust();
-//         2) Generate elecricity
-    void increasePower();
-//         3) Control speed and altitude
-    void increaseAltitude(int amountOfIncrease);
 };
+
 struct CargoSpace
 {
     // 5 properties:
     //     1) Volume (float)
-    float cargoVolume = 64.f;
+    float volume = 64.f;
     //     2) Weight (int)
-    int cargoWeight = 1300;
+    int weight = 1300;
     //     3) Temperature (int)
-    int cargoTemp = 75;
+    int temperature = 75;
     //     4) Capacity (int)
-    int cargoCapacity = 400;
+    int capacity = 400;
     //     5) Loading time (float)
     float loadingTime = 45;
     // 3 things it can do:
@@ -1042,13 +1044,14 @@ struct CargoSpace
     void secureCargo();
 
 };
+
 struct Tail
 {
     // 5 properties:
     //     1) Tail length (int)
-    int tailLength = 55;
+    int length = 55;
     //     2) Tail width (int)
-    int tailWidth = 85;
+    int width = 85;
     //     3) Elevator angle (float)
     float elevatorAngle = 45.f;
     //     4) Stabilizer angle (float)
@@ -1057,34 +1060,36 @@ struct Tail
     int yawControlWidth = 30;
     // 3 things it can do:
     //     1) Create stability
-    void stabilizeTail();
+    void stabilize();
     //     2) Create lift
-    void adjustTailLiftParameter();
+    void createLift();
     //     3) Control side to side movement
-    void adjustSideControl();
+    void controlSideToSide();
 };
+
 struct Fuselage
 {
     // 5 properties:
     //     1) Length of fuselage (int)
-    int fuselageLength = 30;
+    int length = 30;
     //     2) Width of fuselage (int)
-    int fuselageWidth = 15;
+    int width = 15;
     //     3) Height of fuselage (float)
-    float fuselageHeight = 19.f;
+    float height = 19.f;
     //     4) Capacity of fuselage (int)
-    int fuselageCapacity = 59;
+    int capacity = 59;
     //     5) Drag from fuselage (float)
-    float fuselageDrag = 32.2f;
+    float drag = 32.2f;
     // 3 things it can do:
     //     1) Enclose passenger cabin and cargo
     void encloseCabin();
     //     2) Support wings and tail
-    void checkCondition();
+    void supportWingsAndTail();
     //     3) Maintain internal pressure
     void pressureControlCheck();
 
 };
+
 struct Airplane
 {
     Wings wings;  
@@ -1093,7 +1098,7 @@ struct Airplane
     Tail tail;
     Fuselage fuselage;
 
-    void initiateFlightProtocol();
+    void fly();
     void transportPassengers(int passengerAmount);
     void dispatchToAirTraffic();
 };
