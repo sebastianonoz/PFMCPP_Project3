@@ -153,9 +153,6 @@ void Person::run(int howFast, bool startWithLeftFoot)
 	distanceTraveled += (leftFoot.stepSize() + rightFoot.stepSize()) * howFast; 
 }
 
-
-
-
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
     If you have 'unused parameter' warnings, you aren't using one of your function parameters in your implementation.
@@ -175,268 +172,271 @@ void Person::run(int howFast, bool startWithLeftFoot)
  This usually means you have to use identical types for all variables used in an expression that is producing that conversion warning.
  */
 
-
-/*
-Thing 1) Cellphone
-5 properties: 
-    1) Number of camera lens (int)
-    2) Manufacturer (std::string)
-    3) Ram (int)
-    4) Screen size (float)
-    5) Amount of storage (int)
-3 things it can do:
-    1) Make phone calls
-    2) Take photos and videos
-    3) Access the internet and apps.
-
-Thing 2) Movie Theater
-5 properties: 
-    1) Number of theaters (int)
-    2) Cost of small popcorn (double)
-    3) Cost of one ticket (double)
-    4) Number of IMAX theaters (int)
-    5) Number of movies available (int)
-3 things it can do:
-    1) Sell movie tickets
-    2) Play movies
-    3) Sell food and snacks
-
-Thing 3) Dog
-5 properties:
-    1) Number of legs (int)
-    2) Name (std::string)
-    3) Age (int)
-    4) Number of eyes (int)
-    5) Breed (std::string)
-3 things it can do:
-    1) Bark
-    2) Wag tail
-    3) Perform a trick
-
-Thing 4) Guitar
-5 properties:
-    1) Number of strings (int)
-    2) Number of frets (int)
-    3) Volume level (float)
-    4) Brand (std::string)
-    5) Material (std::string)
-3 things it can do:
-    1) Play individual notes
-    2) Be tuned to different tunings
-    3) Strum notes
-Thing 5) Wings
-5 properties:
-    1) Wing shape (std::string)
-    2) Wing length (int)
-    3) Ratio of wings length to width (int)
-    4) Angle of wing tilt (float)
-    5) Flap angle (float)
-3 things it can do:
-    1) Generate lift
-    2) Provide stability
-    3) Adjust to various conditions and scenarios
-
-Thing 6) Engines
-5 properties:
-    1) Number of engines (int)
-    2) Power output (float)
-    3) Fuel efficiency (float)
-    4) Emissions (float)
-    5) Size (int)
-3 things it can do:
-    1) Provide thrust
-    2) Generate elecricity
-    3) Control speed and altitude
-
-Thing 7) Cargo space
-5 properties:
-    1) Volume (float)
-    2) Weight (int)
-    3) Temperature (int)
-    4) Capacity (int)
-    5) Loading time (float)
-3 things it can do:
-    1) Transport
-    2) Store
-    3) Secure
-
-Thing 8) Tail
-5 properties:
-    1) Tail length (int)
-    2) Tail width (int)
-    3) Elevator angle (float)
-    4) Stabilizer angle (float)
-    5) Yaw control width (int)
-3 things it can do:
-    1) Create stability
-    2) Create lift
-    3) Control side to side movement
-
-Thing 9) Fuselage
-5 properties:
-    1) Length of fuselage (int)
-    2) Width of fuselage (int)
-    3) Height of fuselage (float)
-    4) Capacity of fuselage (int)
-    5) Drag from fuselage (float)
-3 things it can do:
-    1) Enclose passenger cabin and cargo
-    2) Support wings and tail
-    3) Maintain internal pressure
-
-Thing 10) Airplane
-5 properties: 
-    1) Wings
-    2) Engines
-    3) Cargo space
-    4) Tail
-    5) Fuselage
-3 things it can do:
-    1) Fly
-    2) Transport passengers and cargo
-    3) Communicate with air traffic control
-*/
+// UDT 1
 
 struct Cellphone
 {
-// 5 properties: 
-    // 1) Number of camera lens (int)
     int numCameraLens = 2;
-    //     2) Manufacturer (std::string)
     std::string manufacaturer = "Apple";
-    //     3) Ram (int)
     int ram = 16;
-    //     4) Screen size (float)
     float screenSize = 6.2f;
-    //     5) Amount of storage (int)
     int storageAmount = 32;
+
     
-    // 3 things it can do:
-    //     1) Make phone calls
     void makePhoneCall(std::string phoneNumber);
-    //     2) Take photos and videos
-    void takePhotoAndVideo(); 
-    //     3) Conenct to the internet
-    void connectToInternet(std::string wifiConnection);
+    void savePhotosAndVideos(int fileSize); 
+    void connectToInternet(bool connectedToWifi);
 };
 
+void Cellphone::makePhoneCall(std::string phoneNumber)
+{
+    if(phoneNumber == "Unavailable")
+    {
+        std::cout << "I'm sorry the phone number you are trying to reach is unavailable" << std::endl;
+    }
+    else
+    {
+        std::cout << "Connecting to call" << std::endl;
+    }
+}
+
+void Cellphone::savePhotosAndVideos(int fileSize)
+{
+    storageAmount -= fileSize;
+}
+
+void Cellphone::connectToInternet(bool connectedToWifi)
+{
+    if(connectedToWifi == false)
+    {
+        std::cout << "Please connect to a WiFi network." << std::endl;
+    }
+    else
+    {
+        std::cout << "Connected!" << std::endl;
+    }
+}
+
+
+// UDT 2
 struct MovieTheater
 {
-    // 5 properties: 
-    //     1) Number of theaters (int)
     int numTheaters = 13;
-    //     2) Cost of small popcorn (double)
     double costSmallPopcorn = 8.9;
-    //     3) Cost of one ticket (double)
-    double costOneTicket = 19.9;
-    //     4) Number of IMAX theaters (int)
+    float costOneTicket = 19.9f;
     int numImaxTheaters = 2;
-    //     5) Number of movies available (int)
     int numMoviesAvailable = 15;
-    // 3 things it can do:
-    //     1) Sell movie tickets
-    void sellMovieTicket(); 
-    //     2) Play movies
-    void playMovie();
-    //     3) Sell food and snacks
-    float sellFoodAndSnacks (std::string itemPurchased, float fullChargeAmount); // returns items purchasing and amount charged.
+    int seatsPerTheater = 60;
+    double cashInRegister = 3000.39;
+    
+    
+
+    void sellOutMovie(int seatsSold); 
+    bool useProjector(bool projectorIsWorking);
+    bool chargeCashForFoodAndSnacks(bool payingWithCash);
 };
 
+void MovieTheater::sellOutMovie(int seatsSold)
+{
+    if(seatsPerTheater == seatsSold)
+    {
+        std::cout << "This showing is sold out." << std::endl;
+    }
+    else
+    {
+        seatsPerTheater -= seatsSold + 1;
+        std::cout << "There are tickets avaialble!" << std::endl;
+    }
+}
+
+bool MovieTheater::useProjector(bool projectorIsWorking)
+{
+    if(projectorIsWorking == true)
+    {
+        return true;
+    }
+    else
+    {
+        numTheaters -= 1;
+        return false;
+    }
+}
+
+bool MovieTheater::chargeCashForFoodAndSnacks(bool payingWithCash)
+{
+    return payingWithCash ? false : true;
+    
+}
+
+// UDT 3
 struct Dog 
 {
-    // 5 properties:
-    //     1) Number of legs (int)
     int numLegs = 4;
-    //     2) Name (std::string)
     std::string name = "Bucky";
-    //     3) Age (int)
     int age = 4;
-    //     4) Number of eyes (int)
     int numEyes = 2;
-    //     5) Breed (std::string)
     std::string breed = "Golden Retriever";
-    // 3 things it can do:
-    //     1) Bark
-    void bark();
-    //     2) Wag tail
-    void wagTail(std::string leftOrRight);
-    //     3) Perform a trick
-    void peformTrick (std::string trickType);
+    int energyLevel = 25;
+
+    void bark(bool isLoud);
+    void wagTail(int howFast);
+    void sitDown(bool wantsToSit);
 };
 
+void Dog::bark(bool isLoud)
+{
+    if(isLoud == true)
+    {
+        energyLevel += 25;
+    }
+}
+void Dog::wagTail(int howFast)
+{
+    if(howFast == 50)
+    {
+        energyLevel += 50;
+    }
+}
+void Dog::sitDown(bool wantsToSit)
+{
+    if(wantsToSit == true)
+    {
+        energyLevel -= 25;
+    }
+}
+
+//UDT 4
 struct Guitar
 {
-
-    // 5 properties:
-    //     1) Number of strings (int)
     int numStrings = 6;
-    //     2) Number of frets (int)
     int numFrets = 22;
-    //     3) Volume level (float)
     float volumeLevel = 3.7f;
-    //     4) Brand (std::string)
     std::string brand = "Gibson";
-    //     5) Material (std::string)
     std::string material = "Spruce Wood";
+    bool inTune = false;
 
     struct Strings
     {
         float lowEStringGauge = .040f; 
-
         float dStringGauge = .010f;
         std::string brand = "Ernie Ball";
         std::string sku = "2229";
         std::string material ="Nickel";
+        int currentPitchST = 0;
         
-        void bend(std::string whichString);
-        void slide(std::string targetNote);
-        void snap(std::string whichString);
-    
+        void bend(std::string whichString, bool bendUp);
+        void slide(std::string currentNote, std::string targetNote);
+        bool snap();
     };
-    // 3 things it can do:
-    //     1) Play individual notes
-    void playNote(Strings strings, std::string whichNote);
-    //     2) Be tuned to different tunings
-    void tune(Strings strings,std::string whichString);
-    //     3) Strum notes
-    void strumNotes (Strings strings, std::string whichChord);
+
+    bool playNote(std::string whichNote);
+    void tune(float CurrentCent);
+    bool makePercussiveNoise();
 };
 
+void Guitar::Strings::bend(std::string whichString, bool bendUp)
+{
+    if(whichString == "Low E")
+    {
+        bendUp = false;
+    }
+    if(whichString == "A")
+    {
+        currentPitchST += 2;
+    }
+}
+void Guitar::Strings::slide(std::string currentNote, std::string targetNote)
+{
+    if(targetNote == "A")
+    {
+        if(currentNote == "G")
+        {
+            currentPitchST += 2;
+        }
+    }
+}
+bool Guitar::Strings::snap()
+{
+    return true;
+}
+
+bool Guitar::playNote(std::string whichNote)
+{
+    if(whichNote == "F")
+    {
+        std::cout << "Now playing " << whichNote << " ." << std::endl;
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+void Guitar::tune(float currentCent)
+{
+    if(currentCent == .00f)
+    {
+        inTune = true;
+    }
+    else {
+        inTune = false;
+    }  
+}
+bool Guitar::makePercussiveNoise()
+{
+    std::cout << "tap tap tap" << std::endl;
+    return true;
+}
+
+
+// UDT 5
 struct Wings
 {
-    // 5 properties:
-    //     1) Wing shape (std::string)
     std::string shape = "Airfoil";
-    //     2) Wing length (int)
     int length = 130;
-    //     3) Ratio of wings length to width (int)
     int ratioLengthToWidth = 55;
-    //     4) Angle of wing tilt (float)
     float tiltAngle = 20.f;
-    //     5) Flap angle (float)
     float flapAngle = 30.f;
-    // 3 things it can do:
-    //     1) Generate lift
-    void generateLift();
-    //     2) Provide stability
+    float stablePosition;
+
+    void generateLift(bool isFullSpeed);
     void stabilize();
-    //     3) Adjust to various conditions and scenarios
-    void adjustToTurbulance();
+    void adjustToTurbulance(int dragLevel);
 }; 
 
+void Wings::generateLift(bool isFullSpeed)
+{
+    if(isFullSpeed == true)
+    {
+        flapAngle += 20.f;
+    }
+}
+void Wings::stabilize()
+{
+   if(tiltAngle > 40.f) 
+   {
+       stablePosition = tiltAngle - 40.f;
+   }
+}
+void Wings::adjustToTurbulance(int dragLevel)
+{
+    if(dragLevel > 30)
+    {
+        tiltAngle -= 20.f;
+        flapAngle -= 30.f;
+    }
+}
+
+
+// UDT 6
 struct Engines 
 {
-//     5 properties:
-//         1) Number of engines (int)
     int numEngines = 2;
-//         2) Power output (float)
     float powerOutput = 30.f;
-//         3) Fuel efficiency (float)
     float fuelEfficiency = 10.f;
-//         4) Emissions (float)
     float emissions = 20.f;
-//         5) Size (int)
     int size = 20;
+    int engineSpeed = 0;
 
     struct Turbines
     {
@@ -445,90 +445,189 @@ struct Engines
         std::string brand = "GE";
         std::string model = "CF3942";
         std::string material ="Titanium";
+        int currentSpeed = 0;
+        float currentPressure = 0;
+        int thrustLevel = 0;
 
-        void thrust(std::string whichTurbine);
-        void efficiency(std::string targetSpeed);
-        void noiseLevel(std::string whichTurbine);
+        void increaseThrustLevel(int targetLevel);
+        void increaseSpeed(int targetSpeed);
+        void increasePressure(int targetPressure);
     };
 
-
-//     3 things it can do:
-//         1) Provide thrust
-    void engageThrust(Turbines turbines);
-//         2) Generate elecricity
-    void increasePower(Turbines turbines, int amountOfIncrease);
-//         3) Control speed and altitude
-    void controlSpeedAndAltitude(Turbines turbines, int amountOfChange);
-
-    Turbines engaged;
+    bool engageThrust(Turbines thrust,bool turbinesEngaged);
+    void increasePower(float amountOfIncrease);
+    void controlSpeed();
 };
 
+void Engines::Turbines::increaseThrustLevel(int targetLevel)
+{
+    if(targetLevel == 20)
+    {
+        thrustLevel += 20;
+    }
+    else
+    {
+    }
+}
+void Engines::Turbines::increaseSpeed(int targetSpeed)
+{
+    if(targetSpeed == 20)
+    {
+        currentSpeed += 20;
+    }
+}
+void Engines::Turbines::increasePressure(int targetPressure)
+{
+    if(targetPressure == 40)
+    {
+        currentPressure += 40;
+    }
+}
+
+bool Engines::engageThrust(Turbines thrust, bool turbinesEngaged)
+{
+    if(turbinesEngaged == true)
+    {
+        int targetLevel = 20;
+        thrust.increaseThrustLevel(targetLevel);
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+void Engines::increasePower(float amountOfIncrease)
+{
+    if(amountOfIncrease == 40.f)
+    {
+        powerOutput += 40.f;
+    }
+}
+void Engines::controlSpeed()
+{
+    if(engineSpeed == 0)
+    {
+        engineSpeed += 10;
+    }
+}
+
+
+// UDT 7
 struct CargoSpace
 {
-    // 5 properties:
-    //     1) Volume (float)
     float volume = 64.f;
-    //     2) Weight (int)
     int weight = 1300;
-    //     3) Temperature (int)
     int temperature = 75;
-    //     4) Capacity (int)
     int capacity = 400;
-    //     5) Loading time (float)
     float loadingTime = 45;
-    // 3 things it can do:
-    //     1) Transport
+
     void transport();
-    //     2) Store
-    void store();
-    //     3) Secure
-    void secure();
+    void store(int amountOfCargo);
+    void secure(bool isDoorEnclosed);
 };
 
+void CargoSpace::transport()
+{
+    std::cout << "Cargo is being transported." << std::endl;
+}
+
+void CargoSpace::store(int amountOfCargo)
+{
+    if(amountOfCargo <= capacity)
+    {
+    std::cout << amountOfCargo << " units of cargo stored." << std::endl;
+    }
+    else
+    {
+    std::cout << "Cargo exceeds maximum capacity." << std::endl;
+    }
+}
+
+void CargoSpace::secure(bool isDoorEnclosed)
+{
+    if(isDoorEnclosed)
+    {
+    std::cout << "Cargo is secured." << std::endl;
+    }
+    else
+    {
+    std::cout << "Cargo is not secured. Please close the door." << std::endl;
+    }
+}
+
+// UDT 8
 struct Tail
 {
-    // 5 properties:
-    //     1) Tail length (int)
     int length = 55;
-    //     2) Tail width (int)
     int width = 85;
-    //     3) Elevator angle (float)
-    float elevatorAngle = 45.f;
-    //     4) Stabilizer angle (float)
-    float stabilizerAngle = 45.f;
-    //     5) Yaw control width (int)
+    int elevatorAngle = 45;
+    int stabilizerAngle = 45;
     int yawControlWidth = 30;
-    // 3 things it can do:
-    //     1) Create stability
+
     void stabilize();
-    //     2) Create lift
     void createLift();
-    //     3) Control side to side movement
     void controlSideToSide();
 };
 
+void Tail::stabilize()
+{
+    if(elevatorAngle != 0 || stabilizerAngle != 0)
+    {
+    elevatorAngle = 0;
+    stabilizerAngle = 0;
+    }
+}
+void Tail::createLift()
+{
+    if(elevatorAngle < 15)
+    {
+    elevatorAngle = 15;
+    }
+}
+void Tail::controlSideToSide()
+{
+    if(yawControlWidth < 30)
+    {
+    yawControlWidth += 10;
+    }
+}
+
+// UDT 9
 struct Fuselage
 {
-    // 5 properties:
-    //     1) Length of fuselage (int)
     int length = 30;
-    //     2) Width of fuselage (int)
     int width = 15;
-    //     3) Height of fuselage (float)
     float height = 19.f;
-    //     4) Capacity of fuselage (int)
     int capacity = 59;
-    //     5) Drag from fuselage (float)
     float drag = 32.2f;
-    // 3 things it can do:
-    //     1) Enclose passenger cabin and cargo
+
     void encloseCabin();
-    //     2) Support wings and tail
     void supportWingsAndTail();
-    //     3) Maintain internal pressure
     void maintainInternalPressure();
 };
 
+void Fuselage::encloseCabin()
+{
+    std::cout << "Cabin enclosed." << std::endl;
+}
+void Fuselage::supportWingsAndTail()
+{
+    std::cout << "Supporting wings and tail." << std::endl;
+}
+void Fuselage::maintainInternalPressure()
+{
+    if(capacity >= 50)
+    {
+    std::cout << "Maintaining internal pressure." << std::endl;
+    }
+    else
+    {
+    std::cout << "Cannot maintain internal pressure. Increase capacity." << std::endl;
+    }
+}
+
+// UDT 10
 struct Airplane
 {
     Wings wings;  
@@ -541,6 +640,26 @@ struct Airplane
     void transportPassengers(int passengerAmount);
     void dispatchToAirTraffic();
 };
+
+void Airplane::fly()
+{
+    std::cout << "Airplane taking off." << std::endl;
+}
+void Airplane::transportPassengers(int passengerAmount)
+{
+    if(passengerAmount <= fuselage.capacity)
+    {
+    std::cout << "Transporting " << passengerAmount << " passengers." << std::endl;
+    }
+    else
+    {
+    std::cout << "Cannot transport " << passengerAmount << " passengers. Maximum capacity is " << fuselage.capacity << "." << std::endl;
+    }
+}
+void Airplane::dispatchToAirTraffic()
+{
+    std::cout << "Dispatching airplane to air traffic." << std::endl;
+}
 
 int main()
 {
