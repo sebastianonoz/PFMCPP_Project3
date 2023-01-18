@@ -110,21 +110,21 @@ struct CarWash
 
 struct Person
 {
-	int age;
-	int height;
-	float hairLength;
-	float GPA;
-	unsigned int SATScore;
-	int distanceTraveled;
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
 
     struct Limb
     {
         int stepSize();
         void stepForward();
     };
-
+    
     Limb leftFoot, rightFoot;
-	void run(int howFast, bool startWithLeftFoot);
+    void run(int howFast, bool startWithLeftFoot);
 };
 
 void Person::Limb::stepForward()
@@ -139,18 +139,18 @@ int Person::Limb::stepSize()
 
 void Person::run(int howFast, bool startWithLeftFoot)
 {
-	if(startWithLeftFoot == true)
-	{
-		leftFoot.stepForward(); 
-		rightFoot.stepForward();
-	}
-	else
-	{
-		rightFoot.stepForward(); 
-		leftFoot.stepForward();
-	}
-	
-	distanceTraveled += (leftFoot.stepSize() + rightFoot.stepSize()) * howFast; 
+    if(startWithLeftFoot == true)
+    {
+        leftFoot.stepForward(); 
+        rightFoot.stepForward();
+    }
+    else
+    {
+        rightFoot.stepForward(); 
+        leftFoot.stepForward();
+    }
+    	
+    distanceTraveled += (leftFoot.stepSize() + rightFoot.stepSize()) * howFast; 
 }
 
  /*
@@ -229,8 +229,6 @@ struct MovieTheater
     int seatsPerTheater = 60;
     double cashInRegister = 3000.39;
     
-    
-
     void sellOutMovie(int seatsSold); 
     bool useProjector(bool projectorIsWorking);
     bool chargeCashForFoodAndSnacks(bool payingWithCash);
@@ -255,17 +253,14 @@ bool MovieTheater::useProjector(bool projectorIsWorking)
     {
         return true;
     }
-    else
-    {
-        numTheaters -= 1;
-        return false;
-    }
+
+    numTheaters -= 1;
+    return false;
 }
 
 bool MovieTheater::chargeCashForFoodAndSnacks(bool payingWithCash)
 {
-    return payingWithCash ? false : true;
-    
+    return ! payingWithCash;
 }
 
 // UDT 3
@@ -367,18 +362,18 @@ bool Guitar::playNote(std::string whichNote)
         std::cout << "Now playing " << whichNote << " ." << std::endl;
         return true;
     }
-    else
-    {
-        return false;
-    }
+    
+    return false;
 }
+
 void Guitar::tune(float currentCent)
 {
     if(currentCent == .00f)
     {
         inTune = true;
     }
-    else {
+    else
+    {
         inTune = false;
     }  
 }
@@ -465,9 +460,6 @@ void Engines::Turbines::increaseThrustLevel(int targetLevel)
     {
         thrustLevel += 20;
     }
-    else
-    {
-    }
 }
 void Engines::Turbines::increaseSpeed(int targetSpeed)
 {
@@ -492,10 +484,8 @@ bool Engines::engageThrust(Turbines thrust, bool turbinesEngaged)
         thrust.increaseThrustLevel(targetLevel);
         return true;
     }
-    else
-    {
-        return false;
-    }
+    
+    return false;
 }
 void Engines::increasePower(float amountOfIncrease)
 {
@@ -536,11 +526,11 @@ void CargoSpace::store(int amountOfCargo)
 {
     if(amountOfCargo <= capacity)
     {
-    std::cout << amountOfCargo << " units of cargo stored." << std::endl;
+        std::cout << amountOfCargo << " units of cargo stored." << std::endl;
     }
     else
     {
-    std::cout << "Cargo exceeds maximum capacity." << std::endl;
+        std::cout << "Cargo exceeds maximum capacity." << std::endl;
     }
 }
 
@@ -548,11 +538,11 @@ void CargoSpace::secure(bool isDoorEnclosed)
 {
     if(isDoorEnclosed)
     {
-    std::cout << "Cargo is secured." << std::endl;
+        std::cout << "Cargo is secured." << std::endl;
     }
     else
     {
-    std::cout << "Cargo is not secured. Please close the door." << std::endl;
+        std::cout << "Cargo is not secured. Please close the door." << std::endl;
     }
 }
 
@@ -574,22 +564,22 @@ void Tail::stabilize()
 {
     if(elevatorAngle != 0 || stabilizerAngle != 0)
     {
-    elevatorAngle = 0;
-    stabilizerAngle = 0;
+        elevatorAngle = 0;
+        stabilizerAngle = 0;
     }
 }
 void Tail::createLift()
 {
     if(elevatorAngle < 15)
     {
-    elevatorAngle = 15;
+        elevatorAngle = 15;
     }
 }
 void Tail::controlSideToSide()
 {
     if(yawControlWidth < 30)
     {
-    yawControlWidth += 10;
+        yawControlWidth += 10;
     }
 }
 
@@ -619,11 +609,11 @@ void Fuselage::maintainInternalPressure()
 {
     if(capacity >= 50)
     {
-    std::cout << "Maintaining internal pressure." << std::endl;
+        std::cout << "Maintaining internal pressure." << std::endl;
     }
     else
     {
-    std::cout << "Cannot maintain internal pressure. Increase capacity." << std::endl;
+        std::cout << "Cannot maintain internal pressure. Increase capacity." << std::endl;
     }
 }
 
@@ -649,11 +639,11 @@ void Airplane::transportPassengers(int passengerAmount)
 {
     if(passengerAmount <= fuselage.capacity)
     {
-    std::cout << "Transporting " << passengerAmount << " passengers." << std::endl;
+        std::cout << "Transporting " << passengerAmount << " passengers." << std::endl;
     }
     else
     {
-    std::cout << "Cannot transport " << passengerAmount << " passengers. Maximum capacity is " << fuselage.capacity << "." << std::endl;
+        std::cout << "Cannot transport " << passengerAmount << " passengers. Maximum capacity is " << fuselage.capacity << "." << std::endl;
     }
 }
 void Airplane::dispatchToAirTraffic()
