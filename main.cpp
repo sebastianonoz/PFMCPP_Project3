@@ -46,10 +46,10 @@ struct Cellphone
 {
     int numCameraLens = 2;
     std::string manufacaturer = "Apple";
-    std::string phoneNumber = "13924823728";
+    std::string phoneNumber;
     int ram = 16;
     float screenSize = 6.2f;
-    int storageAmount = 32;
+    int storageAmount;
 
     Cellphone();
 
@@ -58,7 +58,9 @@ struct Cellphone
     void connectToInternet(bool connectedToWifi);
 };
 
-Cellphone::Cellphone()
+Cellphone::Cellphone() :
+phoneNumber("13927393820"),
+storageAmount(64)
 {
     std::cout << "Cellphone being constructed!" << std::endl;
 }
@@ -67,18 +69,18 @@ void Cellphone::makePhoneCall(int countryCode)
 {
     if(countryCode == 1)
     {
-        std::cout << "Making a phone call from this telephone number:/n"<< phoneNumber << std::endl;
+        std::cout << "Making a phone call from this telephone number:\n"<< phoneNumber << std::endl;
     }
     else if (countryCode == 53)
     {
-        std::cout << "Sorry, unable to make the call." << std::endl;
+        std::cout << "Sorry, unable to make the call from this telephone number:\n"<< phoneNumber  << std::endl;
     }
 }
 
 void Cellphone::savePhotosAndVideos(int fileSize)
 {
     storageAmount -= fileSize;
-    std::cout << "File saved!" << std::endl;
+    std::cout << "File saved! Storage capacity:\n" << storageAmount  << std::endl;
 }
 
 void Cellphone::connectToInternet(bool connectedToWifi)
@@ -97,11 +99,11 @@ void Cellphone::connectToInternet(bool connectedToWifi)
 // UDT 2
 struct MovieTheater
 {
-    int numTheaters = 2;
+    int numTheaters;
     double costSmallPopcorn = 8.9;
     float costOneTicket = 19.9f;
     int numMoviesAvailable = 2;
-    int seatsInTheater = 60;
+    int seatsInTheater;
     double cashInRegister = 3000.39;
 
     MovieTheater();
@@ -111,7 +113,9 @@ struct MovieTheater
     bool chargeCashForFoodAndSnacks(bool payingWithCash);
 };
 
-MovieTheater::MovieTheater()
+MovieTheater::MovieTheater() :
+numTheaters(2),
+seatsInTheater(60)
 {
     std::cout << "MovieTheater being constructed!" << std::endl;
 }
@@ -148,12 +152,13 @@ bool MovieTheater::chargeCashForFoodAndSnacks(bool payingWithCash)
 // UDT 3
 struct Dog 
 {
+    int energyLevel;
     int numLegs = 4;
-    std::string name = "Bucky";
+    std::string name;
     int age = 4;
     int numEyes = 2;
     std::string breed = "Golden Retriever";
-    int energyLevel = 25;
+    
 
     Dog();
 
@@ -162,7 +167,9 @@ struct Dog
     void sitDown(bool wantsToSit);
 };
 
-Dog::Dog()
+Dog::Dog() :
+energyLevel(50),
+name("Sam")
 {
     std::cout << "Dog is being constructed!" << std::endl;
 }
@@ -187,7 +194,7 @@ void Dog::sitDown(bool wantsToSit)
 {
     if(wantsToSit == true)
     {
-        energyLevel -= 25;
+        energyLevel -= energyLevel;
         std::cout << "Sleepy... my energy level ... is ... " << energyLevel << std::endl;
     }
 }
@@ -200,7 +207,7 @@ struct Guitar
     float volumeLevel = 3.7f;
     std::string brand = "Gibson";
     std::string material = "Spruce Wood";
-    bool inTune = false;
+    bool inTune;
 
     struct Strings
     {
@@ -209,7 +216,7 @@ struct Guitar
         std::string brand = "Ernie Ball";
         std::string sku = "2229";
         std::string material ="Nickel";
-        int currentPitchST = 0;
+        int currentPitchST;
 
         Strings();
         
@@ -225,12 +232,14 @@ struct Guitar
     bool makePercussiveNoise();
 };
 
-Guitar::Guitar()
+Guitar::Guitar() :
+inTune(false)
 {
     std::cout << "Guitar being constructed!" << std::endl;
 }
 
-Guitar::Strings::Strings()
+Guitar::Strings::Strings() :
+currentPitchST(2)
 {
     std::cout << "Strings being constructed!" << std::endl;
 }
@@ -285,7 +294,8 @@ void Guitar::tune(float currentCent)
     else
     {
         inTune = false;
-        std::cout << "Current tuning is:" << currentCent << std::endl;
+        currentCent = 0;
+        std::cout << "Current tuning is: " << currentCent << std::endl;
     }  
 }
 bool Guitar::makePercussiveNoise()
@@ -301,9 +311,7 @@ struct Wings
     std::string shape = "Airfoil";
     int length = 130;
     int ratioLengthToWidth = 55;
-    float tiltAngle = 20.f;
-    float flapAngle = 30.f;
-    float stablePosition;
+    float tiltAngle; float flapAngle; float stablePosition;
 
     Wings();
 
@@ -312,7 +320,9 @@ struct Wings
     void adjustToTurbulance(int dragLevel);
 }; 
 
-Wings::Wings()
+Wings::Wings() :
+tiltAngle{80.f},
+flapAngle{50.f}
 {
     std::cout << "Wings being constructed!" << std::endl;
 }
@@ -330,7 +340,7 @@ void Wings::stabilize()
    if(tiltAngle > 40.f) 
    {
        stablePosition = tiltAngle - 40.f;
-       std::cout << "Stabilized position at:"<< stablePosition << std::endl;
+       std::cout << "Stabilized position at: "<< stablePosition << std::endl;
    }
 }
 void Wings::adjustToTurbulance(int dragLevel)
@@ -348,7 +358,7 @@ void Wings::adjustToTurbulance(int dragLevel)
 struct Engines 
 {
     int numEngines = 2;
-    float powerOutput = 30.f;
+    float powerOutput;
     float fuelEfficiency = 10.f;
     float emissions = 20.f;
     int size = 20;
@@ -361,9 +371,9 @@ struct Engines
         std::string brand = "GE";
         std::string model = "CF3942";
         std::string material ="Titanium";
-        int currentSpeed = 0;
-        float currentPressure = 0;
-        int thrustLevel = 0;
+        int currentSpeed;
+        int thrustLevel;
+        float currentPressure;
 
         Turbines();
 
@@ -379,12 +389,17 @@ struct Engines
     void controlSpeed();
 };
 
-Engines::Engines()
+Engines::Engines() :
+powerOutput{.30f}
 {
     std::cout << "Engines being constructed!" << std::endl;
 }
 
-Engines::Turbines::Turbines()
+Engines::Turbines::Turbines() :
+currentSpeed(0),
+thrustLevel(0),
+currentPressure{.00f}
+
 {
     std::cout << "Turbines being constructed!" << std::endl;
 }
@@ -449,7 +464,7 @@ struct CargoSpace
     float volume = 64.f;
     int weight = 1300;
     int temperature = 75;
-    int capacity = 400;
+    int capacity;
     float loadingTime = 45;
 
     CargoSpace();
@@ -459,7 +474,8 @@ struct CargoSpace
     void secure(bool isDoorEnclosed);
 };
 
-CargoSpace::CargoSpace()
+CargoSpace::CargoSpace() :
+capacity(650)
 {
     std::cout << "CargoSpace being constructed!" << std::endl;
 }
@@ -473,7 +489,8 @@ void CargoSpace::store(int amountOfCargo)
 {
     if(amountOfCargo <= capacity) 
     {
-        std::cout << amountOfCargo << " units of cargo stored." << std::endl;
+        capacity -= amountOfCargo;
+        std::cout << capacity << " spaces left in cargo" << std::endl;
     }
     else 
     {
@@ -496,11 +513,7 @@ void CargoSpace::secure(bool isDoorEnclosed)
 // UDT 8
 struct Tail
 {
-    int length = 55;
-    int width = 85;
-    int elevatorAngle = 45;
-    int stabilizerAngle = 45;
-    int yawControlWidth = 30;
+    int length; int width; int elevatorAngle; int stabilizerAngle; int yawControlWidth;
 
     Tail();
 
@@ -509,7 +522,12 @@ struct Tail
     void controlSideToSide();
 };
 
-Tail::Tail()
+Tail::Tail() :
+    length(55),
+    width(85),
+    elevatorAngle(45),
+    stabilizerAngle(45),
+    yawControlWidth(20)
 {
     std::cout << "Tail being constructed!" << std::endl;
 }
@@ -543,10 +561,8 @@ void Tail::controlSideToSide()
 // UDT 9
 struct Fuselage
 {
-    int length = 30;
-    int width = 15;
+    int length; int width; int capacity;
     float height = 19.f;
-    int capacity = 59;
     float drag = 32.2f;
 
     Fuselage();
@@ -556,7 +572,10 @@ struct Fuselage
     void maintainInternalPressure();
 };
 
-Fuselage::Fuselage()
+Fuselage::Fuselage() :
+length(40),
+width(60),
+capacity(80)
 {
     std::cout << "Fuselage being constructed!" << std::endl;
 }
@@ -573,7 +592,7 @@ void Fuselage::maintainInternalPressure()
 {
     if(capacity >= 50)
     {
-        std::cout << "Maintaining internal pressure." << std::endl;
+        std::cout << "Maintaining internal pressure at a capacity of: "<< capacity << std::endl;
     }
     else
     {
@@ -644,7 +663,7 @@ int main()
     Guitar gib;
     Guitar::Strings eball;
     gib.playNote("F");
-    gib.tune(.00);
+    gib.tune(.04f);
     gib.makePercussiveNoise();
     eball.bend("Low E", false);
     eball.slide("A", "G");
