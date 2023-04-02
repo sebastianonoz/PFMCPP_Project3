@@ -504,10 +504,12 @@ void CargoSpace::transport()
 
 void CargoSpace::store(int amountOfCargo)
 {
-    if(amountOfCargo <= capacity) {
+    if(amountOfCargo <= capacity) 
+    {
         std::cout << amountOfCargo << " units of cargo stored." << std::endl;
     }
-    else {
+    else 
+    {
         std::cout << "Cargo exceeds maximum capacity." << std::endl;
     }
 }
