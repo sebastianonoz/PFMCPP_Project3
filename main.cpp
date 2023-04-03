@@ -186,8 +186,12 @@ bool MovieTheater::useProjector(bool projectorIsWorking)
     {
         return true;
     }
-    numTheaters -= 1; FIXME
-    std::cout << "There is/are " << numTheaters << " theater(s) available." << std::endl;
+    if (numTheaters > 0)
+    {
+        numTheaters -= 1;
+        numTheaters -= 1; 
+        std::cout << "There is/are " << numTheaters << " theater(s) available." << std::endl;
+    }
     return false;
 }
 
@@ -395,7 +399,9 @@ struct Wings
     std::string shape = "Airfoil";
     int length = 130;
     int ratioLengthToWidth = 55;
-    float tiltAngle; float flapAngle; float stablePosition;
+    int tiltAngle; 
+    int flapAngle; 
+    int stablePosition;
 
     Wings();
 
@@ -406,8 +412,10 @@ struct Wings
 }; 
 
 Wings::Wings() :
-tiltAngle{80.f},
-flapAngle{50.f}
+tiltAngle(80),
+flapAngle(50),
+stablePosition(40)
+
 {
     std::cout << "Wings being constructed!" << std::endl;
 }
@@ -416,15 +424,15 @@ void Wings::generateLift(bool isFullSpeed)
 {
     if(isFullSpeed == true)
     {
-        flapAngle += 20.f;
+        flapAngle += 20;
         std::cout << "Generating lift with wing angle at: "<< flapAngle << std::endl;
     }
 }
 void Wings::stabilize()
 {
-   if(tiltAngle > 40.f) 
+   if(tiltAngle > 40) 
    {
-       stablePosition = tiltAngle - 40.f;
+       stablePosition = tiltAngle - 40;
        std::cout << "Stabilized position at: "<< stablePosition << std::endl;
    }
 }
@@ -432,8 +440,8 @@ void Wings::adjustToTurbulance(int dragLevel)
 {
     if(dragLevel > 30)
     {
-        tiltAngle -= 20.f;
-        flapAngle -= 30.f;
+        tiltAngle -= 20;
+        flapAngle -= 30;
         std::cout << "Adjusted to turbulent conditions." << std::endl;
     }
 }
@@ -442,9 +450,9 @@ void Wings::shiftMechanics(int howMuch)
 {
     for (int i = 0; i < howMuch; ++i)
     {
-        tiltAngle += 1; FIXME
-        flapAngle += 1; FIXME
-        stablePosition -= 1; FIXME
+        tiltAngle += howMuch; 
+        flapAngle += howMuch; 
+        stablePosition -= howMuch; 
         std::cout << "Tilt angle: " << tiltAngle << ", Flap angle: " << flapAngle << ", Stable position: " << stablePosition << std::endl;
     }
     
@@ -484,7 +492,7 @@ struct Engines
     Engines();
 
     bool engageThrust(Turbines thrust,bool turbinesEngaged);
-    void increasePower(float amountOfIncrease);
+    void increasePower(int amountOfIncrease);
     void controlSpeed();
 };
 
@@ -548,11 +556,11 @@ bool Engines::engageThrust(Turbines thrust, bool turbinesEngaged)
     
     return false;
 }
-void Engines::increasePower(float amountOfIncrease)
+void Engines::increasePower(int amountOfIncrease)
 {
-    if(amountOfIncrease == 40.f)
+    if(amountOfIncrease == 40)
     {
-        powerOutput += 40.f;
+        powerOutput += 40;
         std::cout << "Power output increased to " << powerOutput << std::endl;
     }
 }
@@ -826,7 +834,7 @@ int main()
     wings.generateLift(true);
     wings.stabilize();
     wings.adjustToTurbulance(40);
-    wings.shiftMechanics(5);
+    wings.shiftMechanics(3);
 
     Engines engines;
     Engines::Turbines turbines;
