@@ -186,7 +186,7 @@ bool MovieTheater::useProjector(bool projectorIsWorking)
     {
         return true;
     }
-    numTheaters -= 1;
+    numTheaters -= 1; FIXME
     std::cout << "There is/are " << numTheaters << " theater(s) available." << std::endl;
     return false;
 }
@@ -442,9 +442,9 @@ void Wings::shiftMechanics(int howMuch)
 {
     for (int i = 0; i < howMuch; ++i)
     {
-        tiltAngle += 1;
-        flapAngle += 1;
-        stablePosition -= 1;
+        tiltAngle += 1; FIXME
+        flapAngle += 1; FIXME
+        stablePosition -= 1; FIXME
         std::cout << "Tilt angle: " << tiltAngle << ", Flap angle: " << flapAngle << ", Stable position: " << stablePosition << std::endl;
     }
     
