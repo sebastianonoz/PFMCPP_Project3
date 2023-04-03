@@ -188,8 +188,7 @@ bool MovieTheater::useProjector(bool projectorIsWorking)
     }
     if (numTheaters > 0)
     {
-        numTheaters -= 1;
-        numTheaters -= 1; 
+        --numTheaters;
         std::cout << "There is/are " << numTheaters << " theater(s) available." << std::endl;
     }
     return false;
@@ -450,9 +449,9 @@ void Wings::shiftMechanics(int howMuch)
 {
     for (int i = 0; i < howMuch; ++i)
     {
-        tiltAngle += howMuch; 
-        flapAngle += howMuch; 
-        stablePosition -= howMuch; 
+        ++tiltAngle; 
+        ++flapAngle; 
+        --stablePosition; 
         std::cout << "Tilt angle: " << tiltAngle << ", Flap angle: " << flapAngle << ", Stable position: " << stablePosition << std::endl;
     }
     
