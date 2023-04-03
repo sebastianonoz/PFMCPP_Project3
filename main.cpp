@@ -847,7 +847,7 @@ int main()
     Fuselage fuselage;
     fuselage.encloseCabin();
     fuselage.supportWingsAndTail();
-    fuselage.maintainInternalPressure();\
+    fuselage.maintainInternalPressure();
     fuselage.receivePassengers(10);
 
     Airplane boeing;
