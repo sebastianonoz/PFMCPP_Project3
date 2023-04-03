@@ -623,7 +623,7 @@ void CargoSpace::loadCargo(int cargoSize)
 {
     for (int i = 0; i < cargoSize; ++i)
     {
-        --capacity
+        --capacity;
         std::cout << "Loading box #" << i+1 << " Capacity: " << capacity << std::endl;
     }
 }
