@@ -134,7 +134,8 @@ void Cellphone::changeScreenBrightness(int targetValue)
 {
     while (screenBrightness < targetValue) 
     {
-        std::cout << "Increasing screen size to: " << ++screenBrightness << std::endl;
+        ++screenBrightness;
+        std::cout << "Increasing screen size to: " << screenBrightness << std::endl;
     }
 }
 
@@ -199,7 +200,8 @@ void MovieTheater::printTickets(int howMany)
 {
     for (int i = 0; i < howMany; ++i)
     {
-        std::cout << "Printing ticket #" << i + 1 << ". Tickets avaialble: " << --ticketsAvailable << std::endl;
+        --ticketsAvailable;
+        std::cout << "Printing ticket #" << i + 1 << ". Tickets avaialble: " << ticketsAvailable << std::endl;
         
     }
 }
@@ -211,8 +213,8 @@ struct Dog
     int numLegs = 4;
     std::string name;
     int age = 4;
-    int numEyes = 2;   
-    std::string toys[4] = {"Tennis Ball", "Rattlesnake", "Plushie", "Basketball"};
+    int numEyes = 2;  
+    
     
     std::string breed = "Golden Retriever";
     
@@ -222,11 +224,11 @@ struct Dog
     void bark(bool isLoud);
     void wagTail(int howFast);
     void sitDown(bool wantsToSit);
-    void chewOnToys( int howMany );
+    void jump(int howHigh);
 };
 
 Dog::Dog() :
-energyLevel(50),
+energyLevel(100),
 name("Sam")
 {
     std::cout << "Dog is being constructed!" << std::endl;
@@ -257,11 +259,13 @@ void Dog::sitDown(bool wantsToSit)
     }
 }
 
-void Dog::chewOnToys( int howMany ) 
+void Dog::jump( int howHigh ) 
 {
-    for (int i = 0; i < howMany; ++i)
+    int energyCost = howHigh;
+    for(int i = 0; i < howHigh; ++i)
     {
-        std::cout << "Chewing on " << toys[i] << std::endl;
+        energyLevel -= energyCost;
+        std::cout << name << " is at " << i << " meter(s), and its energy level is now " << energyLevel << std::endl;
     }
 }
 
@@ -376,7 +380,8 @@ void Guitar::increaseVolume(int targetVolume)
 {
     while (volumeLevel < targetVolume)
     {
-        std::cout << "Increasing volume from " << volumeLevel << " to " << ++volumeLevel << std::endl; 
+        ++volumeLevel;
+        std::cout << "Increasing volume to " << volumeLevel << std::endl; 
         if (volumeLevel == targetVolume)
         {
             std::cout << "At desired volume" << std::endl;
@@ -435,7 +440,7 @@ void Wings::adjustToTurbulance(int dragLevel)
 
 void Wings::shiftMechanics(int howMuch)
 {
-    for (int i = 0; i < howMuch; i++)
+    for (int i = 0; i < howMuch; ++i)
     {
         tiltAngle += 1;
         flapAngle += 1;
@@ -616,9 +621,10 @@ void CargoSpace::secure(bool isDoorEnclosed)
 
 void CargoSpace::loadCargo(int cargoSize)
 {
-    for (int i = 0; i < cargoSize; i++)
+    for (int i = 0; i < cargoSize; ++i)
     {
-        std::cout << "Loading box #" << i+1 << " Capacity: " << --capacity << std::endl;
+        --capacity
+        std::cout << "Loading box #" << i+1 << " Capacity: " << capacity << std::endl;
     }
 }
 
@@ -804,7 +810,7 @@ int main()
     dog.bark(true);
     dog.wagTail(50);
     dog.sitDown(true);
-    dog.chewOnToys(3);
+    dog.jump(4);
 
     Guitar gib;
     Guitar::Strings eball;
