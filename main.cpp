@@ -24,7 +24,7 @@ Create a branch named Part5
  4) use std::cout statements to print out information about what your loops did.
     Your code should produce a lot of console output now.
 
- 5) Remember to use   in your loops. 
+ 5) Remember to use pre-increment/decrement in your loops. 
  You can learn why post-increment/decrement is not ideal here:
  https://en.cppreference.com/w/cpp/language/operator_incdec 
  
@@ -856,7 +856,7 @@ int main()
     boeing.dispatchToAirTraffic();
 
     std::cout << "Fuselage capacity: " << fuselage.capacity << std::endl;
-    std::cout << "Storage capacity: " << cs.capacity << std::endl 
+    std::cout << "Storage capacity: " << cs.capacity << std::endl;
       
     std::cout << "good to go!" << std::endl;
     return 0;
