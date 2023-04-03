@@ -82,17 +82,20 @@ struct Cellphone
     int ram = 16;
     float screenSize = 6.2f;
     int storageAmount;
+    int screenBrightness;
 
     Cellphone();
 
     void makePhoneCall(int countryCode);
     void savePhotosAndVideos(int fileSize); 
     void connectToInternet(bool connectedToWifi);
+    void changeScreenBrightness(int targetValue);
 };
 
 Cellphone::Cellphone() :
 phoneNumber("13927393820"),
-storageAmount(64)
+storageAmount(64),
+screenBrightness(45)
 {
     std::cout << "Cellphone being constructed!" << std::endl;
 }
@@ -127,6 +130,15 @@ void Cellphone::connectToInternet(bool connectedToWifi)
     }
 }
 
+void Cellphone::changeScreenBrightness(int targetValue)
+{
+    while (screenBrightness < targetValue) 
+    {
+        ++screenBrightness;
+        std::cout << "Increasing screen size to: " << screenBrightness << std::endl;
+    }
+}
+
 
 // UDT 2
 struct MovieTheater
@@ -135,6 +147,7 @@ struct MovieTheater
     double costSmallPopcorn = 8.9;
     float costOneTicket = 19.9f;
     int numMoviesAvailable = 2;
+    int ticketsAvailable;
     int seatsInTheater;
     double cashInRegister = 3000.39;
 
@@ -143,10 +156,12 @@ struct MovieTheater
     void sellOutMovie(int seatsSold); 
     bool useProjector(bool projectorIsWorking);
     bool chargeCashForFoodAndSnacks(bool payingWithCash);
+    void printTickets(int howMany);
 };
 
 MovieTheater::MovieTheater() :
 numTheaters(2),
+ticketsAvailable(60),
 seatsInTheater(60)
 {
     std::cout << "MovieTheater being constructed!" << std::endl;
@@ -171,14 +186,27 @@ bool MovieTheater::useProjector(bool projectorIsWorking)
     {
         return true;
     }
-    numTheaters -= 1;
-    std::cout << "There is/are " << numTheaters << " theater(s) available." << std::endl;
+    if (numTheaters > 0)
+    {
+        --numTheaters;
+        std::cout << "There is/are " << numTheaters << " theater(s) available." << std::endl;
+    }
     return false;
 }
 
 bool MovieTheater::chargeCashForFoodAndSnacks(bool payingWithCash)
 {
     return ! payingWithCash;
+}
+
+void MovieTheater::printTickets(int howMany)
+{
+    for (int i = 0; i < howMany; ++i)
+    {
+        --ticketsAvailable;
+        std::cout << "Printing ticket #" << i + 1 << ". Tickets avaialble: " << ticketsAvailable << std::endl;
+        
+    }
 }
 
 // UDT 3
@@ -188,7 +216,9 @@ struct Dog
     int numLegs = 4;
     std::string name;
     int age = 4;
-    int numEyes = 2;
+    int numEyes = 2;  
+    
+    
     std::string breed = "Golden Retriever";
     
 
@@ -197,10 +227,11 @@ struct Dog
     void bark(bool isLoud);
     void wagTail(int howFast);
     void sitDown(bool wantsToSit);
+    void jump(int howHigh);
 };
 
 Dog::Dog() :
-energyLevel(50),
+energyLevel(100),
 name("Sam")
 {
     std::cout << "Dog is being constructed!" << std::endl;
@@ -231,12 +262,22 @@ void Dog::sitDown(bool wantsToSit)
     }
 }
 
+void Dog::jump( int howHigh ) 
+{
+    int energyCost = howHigh;
+    for(int i = 0; i < howHigh; ++i)
+    {
+        energyLevel -= energyCost;
+        std::cout << name << " is at " << i << " meter(s), and its energy level is now " << energyLevel << std::endl;
+    }
+}
+
 //UDT 4
 struct Guitar
 {
     int numStrings = 6;
     int numFrets = 22;
-    float volumeLevel = 3.7f;
+    int volumeLevel = 40;
     std::string brand = "Gibson";
     std::string material = "Spruce Wood";
     bool inTune;
@@ -262,6 +303,8 @@ struct Guitar
     bool playNote(std::string whichNote);
     void tune(float CurrentCent);
     bool makePercussiveNoise();
+    void increaseVolume(int targetVolume);
+    
 };
 
 Guitar::Guitar() :
@@ -336,6 +379,18 @@ bool Guitar::makePercussiveNoise()
     return true;
 }
 
+void Guitar::increaseVolume(int targetVolume)
+{
+    while (volumeLevel < targetVolume)
+    {
+        ++volumeLevel;
+        std::cout << "Increasing volume to " << volumeLevel << std::endl; 
+        if (volumeLevel == targetVolume)
+        {
+            std::cout << "At desired volume" << std::endl;
+        }    
+    }
+}
 
 // UDT 5
 struct Wings
@@ -343,18 +398,23 @@ struct Wings
     std::string shape = "Airfoil";
     int length = 130;
     int ratioLengthToWidth = 55;
-    float tiltAngle; float flapAngle; float stablePosition;
+    int tiltAngle; 
+    int flapAngle; 
+    int stablePosition;
 
     Wings();
 
     void generateLift(bool isFullSpeed);
     void stabilize();
     void adjustToTurbulance(int dragLevel);
+    void shiftMechanics(int howMuch);
 }; 
 
 Wings::Wings() :
-tiltAngle{80.f},
-flapAngle{50.f}
+tiltAngle(80),
+flapAngle(50),
+stablePosition(40)
+
 {
     std::cout << "Wings being constructed!" << std::endl;
 }
@@ -363,15 +423,15 @@ void Wings::generateLift(bool isFullSpeed)
 {
     if(isFullSpeed == true)
     {
-        flapAngle += 20.f;
+        flapAngle += 20;
         std::cout << "Generating lift with wing angle at: "<< flapAngle << std::endl;
     }
 }
 void Wings::stabilize()
 {
-   if(tiltAngle > 40.f) 
+   if(tiltAngle > 40) 
    {
-       stablePosition = tiltAngle - 40.f;
+       stablePosition = tiltAngle - 40;
        std::cout << "Stabilized position at: "<< stablePosition << std::endl;
    }
 }
@@ -379,10 +439,22 @@ void Wings::adjustToTurbulance(int dragLevel)
 {
     if(dragLevel > 30)
     {
-        tiltAngle -= 20.f;
-        flapAngle -= 30.f;
+        tiltAngle -= 20;
+        flapAngle -= 30;
         std::cout << "Adjusted to turbulent conditions." << std::endl;
     }
+}
+
+void Wings::shiftMechanics(int howMuch)
+{
+    for (int i = 0; i < howMuch; ++i)
+    {
+        ++tiltAngle; 
+        ++flapAngle; 
+        --stablePosition; 
+        std::cout << "Tilt angle: " << tiltAngle << ", Flap angle: " << flapAngle << ", Stable position: " << stablePosition << std::endl;
+    }
+    
 }
 
 
@@ -400,6 +472,7 @@ struct Engines
     {
         int lowPressureLenth = 84; 
         int highPressureWidth = 93;
+        int fuelReleased = 0;
         std::string brand = "GE";
         std::string model = "CF3942";
         std::string material ="Titanium";
@@ -412,12 +485,13 @@ struct Engines
         void increaseThrustLevel(int targetLevel);
         void increaseSpeed(int targetSpeed);
         void increasePressure(int targetPressure);
+        void releaseFuel(int amount);
     };
 
     Engines();
 
     bool engageThrust(Turbines thrust,bool turbinesEngaged);
-    void increasePower(float amountOfIncrease);
+    void increasePower(int amountOfIncrease);
     void controlSpeed();
 };
 
@@ -461,6 +535,15 @@ void Engines::Turbines::increasePressure(int targetPressure)
     }
 }
 
+void Engines::Turbines::releaseFuel(int amount)
+{
+    while (fuelReleased < amount)
+    {
+        fuelReleased += 2;
+        std::cout << "Releasing fuel... " << fuelReleased << " liters released so far." << std::endl;
+    }
+}
+
 bool Engines::engageThrust(Turbines thrust, bool turbinesEngaged)
 {
     if(turbinesEngaged == true)
@@ -472,11 +555,11 @@ bool Engines::engageThrust(Turbines thrust, bool turbinesEngaged)
     
     return false;
 }
-void Engines::increasePower(float amountOfIncrease)
+void Engines::increasePower(int amountOfIncrease)
 {
-    if(amountOfIncrease == 40.f)
+    if(amountOfIncrease == 40)
     {
-        powerOutput += 40.f;
+        powerOutput += 40;
         std::cout << "Power output increased to " << powerOutput << std::endl;
     }
 }
@@ -504,6 +587,7 @@ struct CargoSpace
     void transport();
     void store(int amountOfCargo);
     void secure(bool isDoorEnclosed);
+    void loadCargo(int amount);
 };
 
 CargoSpace::CargoSpace() :
@@ -542,6 +626,16 @@ void CargoSpace::secure(bool isDoorEnclosed)
     }
 }
 
+void CargoSpace::loadCargo(int cargoSize)
+{
+    for (int i = 0; i < cargoSize; ++i)
+    {
+        --capacity;
+        std::cout << "Loading box #" << i+1 << " Capacity: " << capacity << std::endl;
+    }
+}
+
+
 // UDT 8
 struct Tail
 {
@@ -552,11 +646,12 @@ struct Tail
     void stabilize();
     void createLift();
     void controlSideToSide();
+    void moveFlaps(int amount);
 };
 
 Tail::Tail() :
-    length(55),
-    width(85),
+    length(5),
+    width(2),
     elevatorAngle(45),
     stabilizerAngle(45),
     yawControlWidth(20)
@@ -590,6 +685,17 @@ void Tail::controlSideToSide()
     }
 }
 
+void Tail::moveFlaps(int amount)
+{
+    int flapArea = length * width;
+    for (int i = 0; i < amount; ++i)
+    {
+        flapArea *= 2;
+        std::cout << "Moving flaps to " << flapArea << std::endl;
+    }
+    
+}
+
 // UDT 9
 struct Fuselage
 {
@@ -602,12 +708,13 @@ struct Fuselage
     void encloseCabin();
     void supportWingsAndTail();
     void maintainInternalPressure();
+    void receivePassengers(int passengerCount);
 };
 
 Fuselage::Fuselage() :
 length(40),
 width(60),
-capacity(80)
+capacity(10)
 {
     std::cout << "Fuselage being constructed!" << std::endl;
 }
@@ -629,6 +736,23 @@ void Fuselage::maintainInternalPressure()
     else
     {
         std::cout << "Cannot maintain internal pressure. Increase capacity." << std::endl;
+    }
+}
+
+void Fuselage::receivePassengers(int passengerCount)
+{
+    int availableCap = capacity;
+    for (int i = 0; i < passengerCount; ++i)
+    {
+        if (availableCap > 0)
+        {
+            --availableCap;
+            std::cout << "Passenger " << i + 1 << " has boarded. " << availableCap <<" more passengers can fit." << std::endl;
+        }
+        else
+        {
+            std::cout << "Fuselage is at full capacity. Cannot board any more passengers." << std::endl;
+        }
     }
 }
 
@@ -681,22 +805,26 @@ int main()
     cell.makePhoneCall(53);
     cell.savePhotosAndVideos(4);
     cell.connectToInternet(false);
+    cell.changeScreenBrightness(50);
 
     MovieTheater mt;
     mt.sellOutMovie(54);
     mt.useProjector(false);
     mt.chargeCashForFoodAndSnacks(false);
+    mt.printTickets(3);
 
     Dog dog;
     dog.bark(true);
     dog.wagTail(50);
     dog.sitDown(true);
+    dog.jump(4);
 
     Guitar gib;
     Guitar::Strings eball;
     gib.playNote("F");
     gib.tune(.04f);
     gib.makePercussiveNoise();
+    gib.increaseVolume(50);
     eball.bend("Low E", false);
     eball.slide("A", "G");
     eball.snap();
@@ -705,6 +833,7 @@ int main()
     wings.generateLift(true);
     wings.stabilize();
     wings.adjustToTurbulance(40);
+    wings.shiftMechanics(3);
 
     Engines engines;
     Engines::Turbines turbines;
@@ -714,21 +843,25 @@ int main()
     turbines.increaseThrustLevel(20);
     turbines.increaseSpeed(20);
     turbines.increasePressure(40);
+    turbines.releaseFuel(10);
 
     CargoSpace cs;
     cs.transport();
     cs.store(350);
     cs.secure(true);
+    cs.loadCargo(5);
 
     Tail tail;
     tail.stabilize();
     tail.createLift();
     tail.controlSideToSide();
+    tail.moveFlaps(5);
 
     Fuselage fuselage;
     fuselage.encloseCabin();
     fuselage.supportWingsAndTail();
     fuselage.maintainInternalPressure();
+    fuselage.receivePassengers(10);
 
     Airplane boeing;
     boeing.fly();
